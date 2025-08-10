@@ -67,7 +67,7 @@ with open("SUMMARY.md", "w", encoding="utf-8") as f:
     f.write("# Summary\n\n")
     f.write("- [首頁](README.md)\n")
 
-  for folder in sorted(os.listdir()):
+for folder in sorted(os.listdir()):
         index_path = os.path.join(folder, "index.md")
         if os.path.isdir(folder) and os.path.exists(index_path):
             f.write(f"- [{folder}]({urllib.parse.quote(folder)}/index.md)\n")
