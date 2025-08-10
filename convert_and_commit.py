@@ -19,7 +19,6 @@ def parse_datetime(raw_date):
 sheet_name = os.environ.get("SHEET_NAME", "審核通過")
 spreadsheet_id = os.environ["SPREADSHEET_ID"]
 encoded_sheet_name = urllib.parse.quote(sheet_name)
-
 CSV_URL = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_sheet_name}"
 
 # 📥 載入資料
@@ -50,15 +49,17 @@ for topic, group in df.groupby("Theme"):
             continue
 
         display_date = date_obj.strftime("%Y/%m/%d %H:%M")
+        tags = row.get("Tag", "").strip()
         content = row.get("Markdown", "").replace("\r\n", "\n")
 
-        # 🔸 包裝成 code block
+        # 🔸 包裝成 code block，並用 tag 或日期當標題
+        section_title = tags or display_date
         wrapped_content = f"```\n{content}\n```"
 
         # 🔹 集中寫入 index.md
-        md_lines.append(f"## {tags or display_date}\n\n```\n{content}\n```")
+        md_lines.append(f"## {section_title}\n\n{wrapped_content}")
 
-    # ✨ 寫入主題首頁
+    # ✨ 寫入主題首頁 index.md
     with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
         f.write(f"# {topic} 歷史貼文\n\n" + "\n\n---\n\n".join(md_lines))
 
