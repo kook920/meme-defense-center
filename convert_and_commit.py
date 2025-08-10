@@ -2,8 +2,8 @@ import pandas as pd
 import os
 import urllib.parse
 import csv
-from datetime import datetime
 from dateutil import parser
+from datetime import datetime
 
 def parse_datetime(raw_date):
     try:
@@ -19,27 +19,23 @@ def parse_datetime(raw_date):
 sheet_name = os.environ.get("SHEET_NAME", "審核通過")
 spreadsheet_id = os.environ["SPREADSHEET_ID"]
 encoded_sheet_name = urllib.parse.quote(sheet_name)
-
 CSV_URL = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_sheet_name}"
 
+# 讀取 CSV 並保留原始換行
 df = pd.read_csv(CSV_URL, quoting=csv.QUOTE_ALL, keep_default_na=False)
-
-# 顯示欄位名稱
 print("欄位名稱：", df.columns.tolist())
 
-# 過濾 Status 為 "通過"
 df = df[df["Status"] == "通過"]
 
-# 按主題處理
+# 每個主題建資料夾並處理貼文
 for topic, group in df.groupby("Theme"):
     folder = topic.strip()
     os.makedirs(folder, exist_ok=True)
-
     md_lines = []
 
     for _, row in group.iterrows():
-        raw_date = row["Date"].strip()
-        if not raw_date:
+        raw_date = row["Date"]
+        if not raw_date.strip():
             continue
 
         date_obj = parse_datetime(raw_date)
@@ -50,36 +46,47 @@ for topic, group in df.groupby("Theme"):
         display_date = date_obj.strftime("%Y/%m/%d %H:%M")
 
         tags = row.get("Tag", "").strip()
-        content = row.get("Markdown", "").replace("\r\n", "\n").replace("\n", "\n\n")
+        content = row.get("Markdown", "").replace("\r\n", "\n").replace("```", "ʼʼʼ")
+        md_filename = f"{file_friendly_date}.md"
 
-        post_filename = f"{file_friendly_date}.md"
-        with open(f"{folder}/{post_filename}", "w", encoding="utf-8") as f:
+        # 寫入單篇 .md
+        with open(f"{folder}/{md_filename}", "w", encoding="utf-8") as f:
             f.write(f"""tags: {tags}
 date: {raw_date}
 ---
 {content}
 """)
 
-        escaped_content = content.replace("```", "ʼʼʼ")  # 避免用戶輸入三反引號
-md_lines.append(f"""## {display_date}
+        # 匯入主題 index.md 的段落（加上 code block）
+        md_lines.append(f"""## {display_date}
 
 ```text
-{escaped_content}
+{content}
 """)
 
 # 寫入 index.md
 with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
-        f.write(f"# {topic} 歷史貼文\n\n" + "\n\n---\n\n".join(md_lines))
+    f.write(f"# {topic} 歷史貼文\n\n" + "\n\n---\n\n".join(md_lines))
 
 # ✅ 產生 SUMMARY.md（包含貼文連結）
 with open("SUMMARY.md", "w", encoding="utf-8") as f:
     f.write("# Summary\n\n")
     f.write("- [首頁](README.md)\n")
 
-    for folder in sorted(os.listdir()):
-        index_path = os.path.join(folder, "index.md")
-        if os.path.isdir(folder) and os.path.exists(index_path):
-            f.write(f"- [{folder}]({urllib.parse.quote(folder)}/index.md)\n")
+for folder in sorted(os.listdir()):
+    if not os.path.isdir(folder):
+        continue
+
+    index_path = os.path.join(folder, "index.md")
+    if os.path.exists(index_path):
+        f.write(f"- [{folder}]({urllib.parse.quote(folder)}/index.md)\n")
+
+        md_files = [
+            md for md in os.listdir(folder)
+            if md.endswith(".md") and md != "index.md"
+        ]
+        for md in sorted(md_files):
+            f.write(f"  - [{md}]({urllib.parse.quote(folder)}/{md})\n")
 
 # ✅ Git 操作
 os.system("git config --global user.name 'github-actions'")
