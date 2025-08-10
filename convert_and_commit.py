@@ -5,7 +5,8 @@ import urllib.parse
 sheet_name = os.environ.get("SHEET_NAME", "審核通過")
 encoded_sheet_name = urllib.parse.quote(sheet_name)
 spreadsheet_id = os.environ["SPREADSHEET_ID"]
-CSV_URL = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_sheet_name}"
+CSV_URL = os.environ["SHEET_CSV_URL"]
+df = pd.read_csv(CSV_URL)
 
 from datetime import datetime
 
