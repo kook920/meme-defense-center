@@ -1,8 +1,8 @@
 import pandas as pd
 import os
-import csv
 from datetime import datetime
 import urllib.parse
+import csv
 
 # 從 GitHub Actions 的環境變數讀取 ID 與表單名稱
 sheet_name = os.environ.get("SHEET_NAME", "審核通過")
@@ -47,7 +47,7 @@ date: {raw_date}
 """)
 
         # 整合段落給 index.md 用
-        md_lines.append(f"## {raw_date}\n\n{content}")
+        md_lines.append(f"## {raw_date}\n\n{content.replace(chr(10), '\n\n')}")
 
     # 寫入主題頁 index.md
     with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
