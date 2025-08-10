@@ -15,7 +15,7 @@ def slugify(text):
     return text.replace(" ", "_").replace("#", "").replace("/", "_")
 
 def get_markdown_content(row):
-    return row["Markdown內容(顯示於gitbook)"].strip()
+    return row["內文markdown"].strip()
 
 def main():
     df = pd.read_csv(SHEET_CSV_URL)
