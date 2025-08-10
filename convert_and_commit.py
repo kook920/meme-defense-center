@@ -67,7 +67,6 @@ md_lines.append(f"""## {display_date}
 {escaped_content}
 </code></pre>
 """)
-)
 
     # 寫入 index.md
     with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
