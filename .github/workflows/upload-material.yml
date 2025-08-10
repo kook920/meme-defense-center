@@ -23,3 +23,4 @@ jobs:
           python convert_and_commit.py
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
