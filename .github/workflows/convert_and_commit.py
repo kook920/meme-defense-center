@@ -1,19 +1,33 @@
-import pandas as pd
 import os
+import pandas as pd
 from datetime import datetime
+import gspread
 
-# 讀取 CSV（Google Sheets 轉出的）
-CSV_URL = os.environ["SHEET_CSV_URL"]
-df = pd.read_csv(CSV_URL)
+SHEET_URL = os.environ.get("SHEET_URL")
+WORKSHEET = os.environ.get("SHEET_WORKSHEET", "審核通過")
+if not SHEET_URL:
+    raise RuntimeError("SHEET_URL is not set")
 
-# 過濾「狀態」為通過的行
+# 使用 service account 驗證
+gc = gspread.service_account(filename='credentials.json')
+
+# 指定分頁
+ws = gc.open_by_url(SHEET_URL).worksheet(WORKSHEET)
+df = pd.DataFrame(ws.get_all_records())
+
+print("欄位名稱：", df.columns.tolist())
+
+if "Status" not in df.columns:
+    raise RuntimeError("找不到 'Status' 欄位，請確認 [審核通過] 分頁的欄名。")
+
+# 過濾通過
 df = df[df["Status"] == "通過"]
 
-# 分組儲存 Markdown（依主題分類）
+# 依主題輸出 md
 for topic, group in df.groupby("Theme"):
     md_lines = []
-
     for _, row in group.iterrows():
+        # 原始為 2025/8/9 21:00 -> 2025-08-09
         date_str = datetime.strptime(row["Date"], "%Y/%m/%d %H:%M").strftime("%Y-%m-%d")
         tags = row["Tag"]
         content = row["Markdown"]
@@ -25,17 +39,9 @@ date: {row['Date']}
 """
         md_lines.append(md)
 
-    # 寫入檔案，例如：馬文君-2025-08-09.md
     latest_date = max(group["Date"])
     latest_date = datetime.strptime(latest_date, "%Y/%m/%d %H:%M").strftime("%Y-%m-%d")
     filename = f"{topic}-{latest_date}.md"
 
     with open(filename, "w", encoding="utf-8") as f:
         f.write("\n\n".join(md_lines))
-
-# 將變更加進 Git 並推送
-os.system("git config --global user.name 'github-actions'")
-os.system("git config --global user.email 'github-actions@users.noreply.github.com'")
-os.system("git add *.md")
-os.system('git commit -m "Auto upload material" || echo "Nothing to commit"')
-os.system("git push")
