@@ -1,5 +1,15 @@
 # 首頁
 
-請從下方選擇主題進入對應頁面 👇 每則貼文右上方有「copy」按鈕，可以一鍵複製貼文！
+面對被鎖圖片的惡質媒體，想反擊又覺得心累嗎？
 
-歡迎友軍投稿 [https://forms.gle/yzc79a7JK5iJwhRK8](https://forms.gle/yzc79a7JK5iJwhRK8)
+
+
+從下方選擇主題進入對應頁面 👇&#x20;
+
+每則貼文右方有 「copy」 按鈕，可以一鍵複製貼文！
+
+
+
+也歡迎台派踴躍投稿 [https://forms.gle/yzc79a7JK5iJwhRK8](https://forms.gle/yzc79a7JK5iJwhRK8) ٩(๑•̀ω•́๑)۶
+
+經過人工審核後會更新上去資料庫
