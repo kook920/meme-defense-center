@@ -38,8 +38,12 @@ for topic, group in df.groupby("Theme"):
         if not raw_date.strip():
             continue
 
-        date_obj = parse_datetime(raw_date)
-        if not date_obj:
+        try:
+            date_obj = parse_datetime(raw_date)
+            if not date_obj:
+                continue
+        except ValueError:
+            print(f"❌ 無法解析日期：{raw_date}")
             continue
 
         file_friendly_date = date_obj.strftime("%Y-%m-%d-%H%M")
@@ -48,10 +52,10 @@ for topic, group in df.groupby("Theme"):
         tags = row.get("Tag", "").strip()
         content = row.get("Markdown", "").replace("\r\n", "\n")
 
-        # 將內文包進 code block，讓 GitBook 顯示複製按鈕
+        # 🔹 包裝成 code block
         wrapped_content = f"```\n{content}\n```"
 
-        # 寫入單篇 markdown
+        # 🔹 寫入單篇 markdown
         post_filename = f"{file_friendly_date}.md"
         with open(f"{folder}/{post_filename}", "w", encoding="utf-8") as f:
             f.write(f"""tags: {tags}
@@ -60,16 +64,12 @@ date: {raw_date}
 {wrapped_content}
 """)
 
-        # 匯入主題 index.md 的段落（加上 code block）
-        md_lines.append(f"""## {display_date}
+        # 🔹 加進主題的 index.md
+        md_lines.append(f"## {display_date}\n\n{wrapped_content}")
 
-```text
-{content}
-""")
-
-# 寫入 index.md
-with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
-    f.write(f"# {topic} 歷史貼文\n\n" + "\n\n---\n\n".join(md_lines))
+    # 🔹 寫入 index.md
+    with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
+        f.write(f"# {topic} 歷史貼文\n\n" + "\n\n---\n\n".join(md_lines))
 
 # ✅ 產生 SUMMARY.md（包含貼文連結）
 with open("SUMMARY.md", "w", encoding="utf-8") as f:
