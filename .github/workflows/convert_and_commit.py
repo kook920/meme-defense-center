@@ -1,62 +1,41 @@
-import os
-import base64
 import pandas as pd
-import requests
+import os
 from datetime import datetime
-from pathlib import Path
 
-# 你的 Google Sheets CSV 匯出網址
-SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1yXofSNohNOnZFUGT6n0jz8FggSiAtGwITt4YMLoVLSs/export?format=csv&gid=0"
-GITHUB_REPO = "kook920/meme-defense-center"
-BRANCH = "main"
-GH_TOKEN = os.getenv("GH_TOKEN")
+# 讀取 CSV（Google Sheets 轉出的）
+CSV_URL = os.environ["SHEET_CSV_URL"]
+df = pd.read_csv(CSV_URL)
 
-def slugify(text):
-    return text.replace(" ", "_").replace("#", "").replace("/", "_")
+# 過濾「狀態」為通過的行
+df = df[df["Status"] == "通過"]
 
-def get_markdown_content(row):
-    return row["內文markdown"].strip()
+# 分組儲存 Markdown（依主題分類）
+for topic, group in df.groupby("Theme"):
+    md_lines = []
 
-def main():
-    df = pd.read_csv(SHEET_CSV_URL)
+    for _, row in group.iterrows():
+        date_str = datetime.strptime(row["Date"], "%Y/%m/%d %H:%M").strftime("%Y-%m-%d")
+        tags = row["Tag"]
+        content = row["Markdown"]
 
-    for _, row in df.iterrows():
-        topic = row["主題"].strip()
-        tags = row["tag"].strip()
-        timestamp = row["時間戳記"].strip()
+        md = f"""tags: {tags}
+date: {row['Date']}
+---
+{content}
+"""
+        md_lines.append(md)
 
-        folder = slugify(topic)
-        filename = f"{folder}-{timestamp}.md"
-        content = get_markdown_content(row)
+    # 寫入檔案，例如：馬文君-2025-08-09.md
+    latest_date = max(group["Date"])
+    latest_date = datetime.strptime(latest_date, "%Y/%m/%d %H:%M").strftime("%Y-%m-%d")
+    filename = f"{topic}-{latest_date}.md"
 
-        # 組合 Markdown 文件內容
-        frontmatter = f"---\ntags: [{tags}]\n---\n\n"
-        markdown = frontmatter + content
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write("\n\n".join(md_lines))
 
-        # 編碼為 Base64
-        encoded = base64.b64encode(markdown.encode("utf-8")).decode("utf-8")
-
-        # 建立 GitHub API URL
-        url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{folder}/{filename}"
-
-        # 建立 body
-        data = {
-            "message": f"Add {filename}",
-            "content": encoded,
-            "branch": BRANCH
-        }
-
-        headers = {
-            "Authorization": f"Bearer {GH_TOKEN}",
-            "Content-Type": "application/json"
-        }
-
-        print(f"Uploading {filename} to GitHub...")
-        res = requests.put(url, headers=headers, json=data)
-        if res.status_code in [200, 201]:
-            print(f"✅ Success: {filename}")
-        else:
-            print(f"❌ Error {res.status_code}: {res.text}")
-
-if __name__ == "__main__":
-    main()
+# 將變更加進 Git 並推送
+os.system("git config --global user.name 'github-actions'")
+os.system("git config --global user.email 'github-actions@users.noreply.github.com'")
+os.system("git add *.md")
+os.system('git commit -m "Auto upload material" || echo "Nothing to commit"')
+os.system("git push")
