@@ -8,6 +8,8 @@
 
 每則貼文右方有 「copy」 按鈕，可以一鍵複製貼文！
 
+📱 小提醒：手機版請長按貼文區塊複製
+
 
 
 也歡迎台派踴躍投稿 [https://forms.gle/yzc79a7JK5iJwhRK8](https://forms.gle/yzc79a7JK5iJwhRK8) ٩(๑•̀ω•́๑)۶
