@@ -73,20 +73,20 @@ with open("SUMMARY.md", "w", encoding="utf-8") as f:
     f.write("# Summary\n\n")
     f.write("- [首頁](README.md)\n")
 
-for folder in sorted(os.listdir()):
-    if not os.path.isdir(folder):
-        continue
+    for folder in sorted(os.listdir()):
+        if not os.path.isdir(folder):
+            continue
 
-    index_path = os.path.join(folder, "index.md")
-    if os.path.exists(index_path):
-        f.write(f"- [{folder}]({urllib.parse.quote(folder)}/index.md)\n")
+        index_path = os.path.join(folder, "index.md")
+        if os.path.exists(index_path):
+            f.write(f"- [{folder}]({urllib.parse.quote(folder)}/index.md)\n")
 
-        md_files = [
-            md for md in os.listdir(folder)
-            if md.endswith(".md") and md != "index.md"
-        ]
-        for md in sorted(md_files):
-            f.write(f"  - [{md}]({urllib.parse.quote(folder)}/{md})\n")
+            md_files = [
+                md for md in os.listdir(folder)
+                if md.endswith(".md") and md != "index.md"
+            ]
+            for md in sorted(md_files):
+                f.write(f"  - [{md}]({urllib.parse.quote(folder)}/{md})\n")
 
 # ✅ Git 操作
 os.system("git config --global user.name 'github-actions'")
