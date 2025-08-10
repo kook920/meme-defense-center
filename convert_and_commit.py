@@ -68,8 +68,8 @@ md_lines.append(f"""## {display_date}
 </code></pre>
 """)
 
-    # 寫入 index.md
-    with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
+# 寫入 index.md
+with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
         f.write(f"# {topic} 歷史貼文\n\n" + "\n\n---\n\n".join(md_lines))
 
 # ✅ 產生 SUMMARY.md（包含貼文連結）
