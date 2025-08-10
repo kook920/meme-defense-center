@@ -6,16 +6,9 @@ from datetime import datetime
 # 讀取環境變數
 sheet_name = os.environ.get("SHEET_NAME", "審核通過")
 spreadsheet_id = os.environ.get("SPREADSHEET_ID")
-csv_url = os.environ.get("SHEET_CSV_URL")
 
-if not csv_url:
-    # 如果 SHEET_CSV_URL 沒有直接提供，則用 ID + Name 組成
-    if not spreadsheet_id:
-        raise ValueError("❌ 必須提供 SHEET_CSV_URL 或 SPREADSHEET_ID")
-    encoded_sheet_name = urllib.parse.quote(sheet_name)
-    csv_url = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_sheet_name}"
-
-print(f"📥 從 Google Sheet 下載 CSV：{csv_url}")
+encoded_sheet_name = urllib.parse.quote(sheet_name)
+csv_url = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_sheet_name}"
 df = pd.read_csv(csv_url)
 
 print("✅ 欄位名稱：", df.columns.tolist())
