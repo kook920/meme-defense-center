@@ -60,7 +60,14 @@ date: {raw_date}
 {content}
 """)
 
-        md_lines.append(f"## {display_date}\n\n{content}")
+        escaped_content = content.replace("```", "ʼʼʼ")  # 避免內容中自己有code block
+md_lines.append(f"""## {display_date}
+
+<pre><code>
+{escaped_content}
+</code></pre>
+""")
+)
 
     # 寫入 index.md
     with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
