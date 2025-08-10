@@ -29,7 +29,7 @@ for topic, group in df.groupby("Theme"):
     os.makedirs(folder, exist_ok=True)
 
     md_lines = []
-    for _, row in group.iterrows():
+for _, row in group.iterrows():
     raw_date = row["Date"]
     date_obj = datetime.strptime(raw_date, "%Y/%m/%d %H:%M")
     date_str = date_obj.strftime("%Y-%m-%d")
@@ -43,7 +43,8 @@ for topic, group in df.groupby("Theme"):
     # 單篇 Markdown 檔案
     post_filename = f"{date_str}.md"
     with open(f"{folder}/{post_filename}", "w", encoding="utf-8") as f:
-        f.write(f"""tags: {tags}
+        f.write(f"""---
+tags: {tags}
 date: {raw_date}
 ---
 {content_with_paragraphs}
