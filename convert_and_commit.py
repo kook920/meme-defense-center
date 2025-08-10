@@ -6,6 +6,8 @@ from datetime import datetime
 CSV_URL = os.environ["SHEET_CSV_URL"]
 df = pd.read_csv(CSV_URL)
 
+print("欄位名稱：", df.columns.tolist())  # 🔍 debug 用
+
 # 過濾「狀態」為通過的行
 df = df[df["Status"] == "通過"]
 
