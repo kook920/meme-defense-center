@@ -30,24 +30,27 @@ for topic, group in df.groupby("Theme"):
 
     md_lines = []
     for _, row in group.iterrows():
-        raw_date = row["Date"]
-        date_obj = datetime.strptime(raw_date, "%Y/%m/%d %H:%M")
-        date_str = date_obj.strftime("%Y-%m-%d")
+    raw_date = row["Date"]
+    date_obj = datetime.strptime(raw_date, "%Y/%m/%d %H:%M")
+    date_str = date_obj.strftime("%Y-%m-%d")
 
-        tags = row["Tag"]
-        content = row["Markdown"].replace("\\n", "\n")  # 👈 保留換行！
+    tags = row["Tag"]
+    content = row["Markdown"]
 
-        # 單篇文章
-        post_filename = f"{date_str}.md"
-        with open(f"{folder}/{post_filename}", "w", encoding="utf-8") as f:
-            f.write(f"""tags: {tags}
+    # ✅ 保留 Markdown 的換行（GitBook 需要 \n\n 才會分段）
+    content_with_paragraphs = content.replace('\n', '\n\n')
+
+    # 單篇 Markdown 檔案
+    post_filename = f"{date_str}.md"
+    with open(f"{folder}/{post_filename}", "w", encoding="utf-8") as f:
+        f.write(f"""tags: {tags}
 date: {raw_date}
 ---
-{content}
+{content_with_paragraphs}
 """)
 
-        # 整合段落給 index.md 用
-        md_lines.append(f"## {raw_date}\n\n{content.replace(chr(10), '\n\n')}")
+    # 整合頁 index.md 中的段落
+    md_lines.append(f"## {raw_date}\n\n{content_with_paragraphs}")
 
     # 寫入主題頁 index.md
     with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
