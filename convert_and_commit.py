@@ -63,15 +63,23 @@ for topic, group in df.groupby("Theme"):
     with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
         f.write(f"# {topic} 歷史貼文\n\n" + "\n\n---\n\n".join(md_lines))
 
-# 🧭 自動產生 GitBook SUMMARY.md
+# 🧭 自動產生 GitBook SUMMARY.md（依照 Google Sheets 出現順序）
+seen_themes = set()
+ordered_themes = []
+
+for theme in df["Theme"]:
+    if theme not in seen_themes:
+        seen_themes.add(theme)
+        ordered_themes.append(theme.strip())
+
 with open("SUMMARY.md", "w", encoding="utf-8") as f:
     f.write("# Summary\n\n")
     f.write("- [首頁](README.md)\n")
 
-    for folder in sorted(os.listdir()):
-        index_path = os.path.join(folder, "index.md")
-        if os.path.isdir(folder) and os.path.exists(index_path):
-            f.write(f"- [{folder}]({urllib.parse.quote(folder)}/index.md)\n")
+    for theme in ordered_themes:
+        index_path = os.path.join(theme, "index.md")
+        if os.path.exists(index_path):
+            f.write(f"- [{theme}]({urllib.parse.quote(theme)}/index.md)\n")
 
 # 🌀 Git 自動提交
 os.system("git config --global user.name 'github-actions'")
