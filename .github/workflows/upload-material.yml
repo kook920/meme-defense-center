@@ -27,9 +27,9 @@ jobs:
       - name: Download Google Sheet and convert to Markdown
         run: python convert_and_commit.py
         
-env:
-  SPREADSHEET_ID: "1yXofSNohNOnZFUGT6n0jz8FggSiAtGwITt4YMLoVLSs"
-  SHEET_NAME: "審核通過"
+        env:
+        SPREADSHEET_ID: "1yXofSNohNOnZFUGT6n0jz8FggSiAtGwITt4YMLoVLSs"
+        SHEET_NAME: "審核通過"
   
       - name: Push to GitHub
         run: |
