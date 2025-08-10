@@ -11,3 +11,4 @@
 - [游顥](%E6%B8%B8%E9%A1%A5/index.md)
 - [江啟臣](%E6%B1%9F%E5%95%9F%E8%87%A3/index.md)
 - [林思銘](%E6%9E%97%E6%80%9D%E9%8A%98/index.md)
+- [中國鬼故事](%E4%B8%AD%E5%9C%8B%E9%AC%BC%E6%95%85%E4%BA%8B/index.md)
