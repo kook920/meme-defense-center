@@ -1,7 +1,7 @@
 name: Upload Markdown
 
 on:
-  workflow_dispatch:  # 手動觸發，你也可以改成定期觸發
+  workflow_dispatch:
 
 jobs:
   upload:
@@ -19,11 +19,18 @@ jobs:
       - name: Install dependencies
         run: pip install pandas gspread oauth2client PyYAML
 
-      - name: Decode Google credentials
+      - name: Restore credentials.json from secret
         run: |
           echo "${{ secrets.GS_CREDENTIALS_BASE64 }}" | base64 -d > credentials.json
+          echo "✅ credentials.json 已還原"
 
       - name: Download Google Sheet and convert to Markdown
         run: python convert_and_commit.py
-        env:
-          SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
+
+      - name: Push Markdown to GitHub
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@users.noreply.github.com'
+          git add *.md
+          git commit -m "Auto upload material" || echo "Nothing to commit"
+          git push
