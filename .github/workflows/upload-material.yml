@@ -27,10 +27,7 @@ jobs:
       - name: Download Google Sheet and convert to Markdown
         run: python convert_and_commit.py
         env:
-             SPREADSHEET_ID = os.environ["SPREADSHEET_ID"]
-             SHEET_NAME = os.environ["SHEET_NAME"]
-             CSV_URL = f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet={SHEET_NAME}"
-             df = pd.read_csv(CSV_URL)
+          SHEET_CSV_URL: "https://docs.google.com/spreadsheets/d/1yXofSNohNOnZFUGT6n0jz8FggSiAtGwITt4YMLoVLSs/gviz/tq?tqx=out:csv&sheet=審核通過"
   
       - name: Push to GitHub
         run: |
