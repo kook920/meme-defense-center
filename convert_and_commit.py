@@ -67,10 +67,16 @@ with open("SUMMARY.md", "w", encoding="utf-8") as f:
     f.write("# Summary\n\n")
     f.write("- [首頁](README.md)\n")
 
-    for folder in sorted(os.listdir()):
-        index_path = os.path.join(folder, "index.md")
-        if os.path.isdir(folder) and os.path.exists(index_path):
-            f.write(f"- [{folder}]({urllib.parse.quote(folder)}/index.md)\n")
+for folder in sorted(os.listdir()):
+    index_path = os.path.join(folder, "index.md")
+    if os.path.isdir(folder) and os.path.exists(index_path):
+        f.write(f"- [{folder}]({urllib.parse.quote(folder)}/index.md)\n")
+
+        # 加入該主題底下所有貼文
+        md_files = [f for f in os.listdir(folder) if f.endswith(".md") and f != "index.md"]
+        for md in sorted(md_files):
+            f.write(f"  - [{md}]({urllib.parse.quote(folder)}/{md})\n")
+
 
 # 🔹 Git 操作
 os.system("git config --global user.name 'github-actions'")
