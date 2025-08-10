@@ -1,47 +1,58 @@
-import os
 import pandas as pd
+import os
 from datetime import datetime
-import gspread
 
-SHEET_URL = os.environ.get("SHEET_URL")
-WORKSHEET = os.environ.get("SHEET_WORKSHEET", "審核通過")
-if not SHEET_URL:
-    raise RuntimeError("SHEET_URL is not set")
+# 🔹 讀取 Google Sheet CSV
+CSV_URL = os.environ["SHEET_CSV_URL"]
+df = pd.read_csv(CSV_URL)
 
-# 使用 service account 驗證
-gc = gspread.service_account(filename='credentials.json')
-
-# 指定分頁
-ws = gc.open_by_url(SHEET_URL).worksheet(WORKSHEET)
-df = pd.DataFrame(ws.get_all_records())
-
+# 🔍 debug：顯示欄位
 print("欄位名稱：", df.columns.tolist())
 
-if "Status" not in df.columns:
-    raise RuntimeError("找不到 'Status' 欄位，請確認 [審核通過] 分頁的欄名。")
-
-# 過濾通過
+# 🔹 過濾 Status 為通過
 df = df[df["Status"] == "通過"]
 
-# 依主題輸出 md
+# 🔹 建立主題資料夾，寫入單篇檔案與 index.md
 for topic, group in df.groupby("Theme"):
+    folder = topic.strip()
+    os.makedirs(folder, exist_ok=True)
+
     md_lines = []
     for _, row in group.iterrows():
-        # 原始為 2025/8/9 21:00 -> 2025-08-09
-        date_str = datetime.strptime(row["Date"], "%Y/%m/%d %H:%M").strftime("%Y-%m-%d")
+        raw_date = row["Date"]
+        date_obj = datetime.strptime(raw_date, "%Y/%m/%d %H:%M")
+        date_str = date_obj.strftime("%Y-%m-%d")
+
         tags = row["Tag"]
         content = row["Markdown"]
 
-        md = f"""tags: {tags}
-date: {row['Date']}
+        # 單篇 Markdown 檔案
+        post_filename = f"{date_str}.md"
+        with open(f"{folder}/{post_filename}", "w", encoding="utf-8") as f:
+            f.write(f"""tags: {tags}
+date: {raw_date}
 ---
 {content}
-"""
-        md_lines.append(md)
+""")
 
-    latest_date = max(group["Date"])
-    latest_date = datetime.strptime(latest_date, "%Y/%m/%d %H:%M").strftime("%Y-%m-%d")
-    filename = f"{topic}-{latest_date}.md"
+        # 整合頁 index.md 中的段落
+        md_lines.append(f"## {raw_date}\n\n{content}")
 
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write("\n\n".join(md_lines))
+    # 寫入 index.md
+    with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
+        f.write(f"# {topic}\n\n" + "\n\n---\n\n".join(md_lines))
+
+# 🔹 自動產出 SUMMARY.md
+with open("SUMMARY.md", "w", encoding="utf-8") as f:
+    f.write("# Summary\n\n")
+    f.write("- [首頁](README.md)\n")
+    for folder in sorted(os.listdir()):
+        if os.path.isdir(folder) and not folder.startswith("."):
+            f.write(f"- [{folder}]({folder}/index.md)\n")
+
+# 🔹 Git 操作
+os.system("git config --global user.name 'github-actions'")
+os.system("git config --global user.email 'github-actions@users.noreply.github.com'")
+os.system("git add .")
+os.system('git commit -m "Auto upload material" || echo "Nothing to commit"')
+os.system("git push")
