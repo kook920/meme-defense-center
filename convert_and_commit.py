@@ -2,7 +2,18 @@ import pandas as pd
 import os
 import urllib.parse
 import csv
-from datetime import datetime
+from dateutil import parser
+
+def parse_datetime(raw_date):
+    try:
+        return datetime.strptime(raw_date, "%Y/%m/%d %H:%M")
+    except:
+        try:
+            # 嘗試讓 dateutil 自動解析（包含中文「下午」格式）
+            return parser.parse(raw_date)
+        except:
+            print(f"❌ 無法解析日期：{raw_date}")
+            return None
 
 # 讀取 Google Sheets 的基本資訊
 sheet_name = os.environ.get("SHEET_NAME", "審核通過")
@@ -34,7 +45,9 @@ for topic, group in df.groupby("Theme"):
             continue  # 跳過空白日期的列
 
         try:
-            date_obj = datetime.strptime(raw_date, "%Y/%m/%d %H:%M")
+            date_obj = parse_datetime(raw_date)
+if not date_obj:
+    continue
         except ValueError:
             print(f"❌ 無法解析日期：{raw_date}")
             continue
