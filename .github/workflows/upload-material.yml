@@ -7,6 +7,10 @@ jobs:
   upload:
     runs-on: ubuntu-latest
 
+    env:
+      SHEET_URL: "https://docs.google.com/spreadsheets/d/1yXofSNohNOnZFUGT6n0jz8FggSiAtGwITt4YMLoVLSs/edit"
+      SHEET_WORKSHEET: "審核通過"
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -22,13 +26,10 @@ jobs:
       - name: Restore credentials.json from secret
         run: |
           echo "${{ secrets.GS_CREDENTIALS_BASE64 }}" | base64 -d > credentials.json
-          echo "✅ credentials.json 已還原"
 
       - name: Download Google Sheet and convert to Markdown
         run: python convert_and_commit.py
-        env:
-          SHEET_CSV_URL: "https://docs.google.com/spreadsheets/d/1yXofSNohNOnZFUGT6n0jz8FggSiAtGwITt4YMLoVLSs/gviz/tq?tqx=out:csv&sheet=審核通過"
-      
+
       - name: Push Markdown to GitHub
         run: |
           git config --global user.name 'github-actions'
