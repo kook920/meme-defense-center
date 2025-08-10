@@ -62,12 +62,14 @@ date: {raw_date}
     with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
         f.write(f"# {topic} 歷史貼文\n\n" + "\n\n---\n\n".join(md_lines))
 
-# 🔹 產生 GitBook 的 SUMMARY.md
+# 🔹 自動產生 GitBook 的 SUMMARY.md
 with open("SUMMARY.md", "w", encoding="utf-8") as f:
     f.write("# Summary\n\n")
     f.write("- [首頁](README.md)\n")
+
     for folder in sorted(os.listdir()):
-        if os.path.isdir(folder) and not folder.startswith("."):
+        index_path = os.path.join(folder, "index.md")
+        if os.path.isdir(folder) and os.path.exists(index_path):
             f.write(f"- [{folder}]({urllib.parse.quote(folder)}/index.md)\n")
 
 # 🔹 Git 操作
