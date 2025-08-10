@@ -1,11 +1,12 @@
 name: Upload Markdown
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # 手動觸發，你也可以改成定期觸發
 
 jobs:
   upload:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -18,9 +19,11 @@ jobs:
       - name: Install dependencies
         run: pip install pandas gspread oauth2client PyYAML
 
-      - name: Download Google Sheet and convert to Markdown
+      - name: Decode Google credentials
         run: |
-          python convert_and_commit.py
+          echo "${{ secrets.GS_CREDENTIALS_BASE64 }}" | base64 -d > credentials.json
+
+      - name: Download Google Sheet and convert to Markdown
+        run: python convert_and_commit.py
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
