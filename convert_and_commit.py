@@ -9,7 +9,7 @@ spreadsheet_id = os.environ.get("SPREADSHEET_ID")
 
 encoded_sheet_name = urllib.parse.quote(sheet_name)
 csv_url = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_sheet_name}"
-df = pd.read_csv(csv_url)
+df = pd.read_csv(CSV_URL, quoting=csv.QUOTE_ALL, keep_default_na=False)
 
 print("✅ 欄位名稱：", df.columns.tolist())
 
