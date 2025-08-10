@@ -56,7 +56,7 @@ for topic, group in df.groupby("Theme"):
         wrapped_content = f"```\n{content}\n```"
 
         # 🔹 集中寫入 index.md
-        md_lines.append(f"## {display_date}\n\n{wrapped_content}")
+        md_lines.append(f"## {tags or display_date}\n\n```\n{content}\n```")
 
     # ✨ 寫入主題首頁
     with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
