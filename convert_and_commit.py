@@ -46,15 +46,18 @@ for topic, group in df.groupby("Theme"):
         display_date = date_obj.strftime("%Y/%m/%d %H:%M")
 
         tags = row.get("Tag", "").strip()
-        content = row.get("Markdown", "").replace("\r\n", "\n").replace("```", "ʼʼʼ")
-        md_filename = f"{file_friendly_date}.md"
+        content = row.get("Markdown", "").replace("\r\n", "\n")
 
-        # 寫入單篇 .md
-        with open(f"{folder}/{md_filename}", "w", encoding="utf-8") as f:
+        # 將內文包進 code block，讓 GitBook 顯示複製按鈕
+        wrapped_content = f"```\n{content}\n```"
+
+        # 寫入單篇 markdown
+        post_filename = f"{file_friendly_date}.md"
+        with open(f"{folder}/{post_filename}", "w", encoding="utf-8") as f:
             f.write(f"""tags: {tags}
 date: {raw_date}
 ---
-{content}
+{wrapped_content}
 """)
 
         # 匯入主題 index.md 的段落（加上 code block）
