@@ -1,0 +1,25 @@
+name: Upload Markdown
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: pip install pandas gspread oauth2client PyYAML
+
+      - name: Download Google Sheet and convert to Markdown
+        run: |
+          python convert_and_commit.py
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
