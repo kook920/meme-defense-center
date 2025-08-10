@@ -27,8 +27,6 @@ jobs:
       - name: Download Google Sheet and convert to Markdown
         run: python convert_and_commit.py
         env:
-          # 這三個選填二：若 SHEET_CSV_URL 有值則優先使用
-          SHEET_CSV_URL: "https://docs.google.com/spreadsheets/d/1yXofSNohNOnZFUGT6n0jz8FggSiAtGwITt4YMLoVLSs/gviz/tq?tqx=out:csv&sheet=審核通過"
           SPREADSHEET_ID: "1yXofSNohNOnZFUGT6n0jz8FggSiAtGwITt4YMLoVLSs"
           SHEET_NAME: "審核通過"
 
