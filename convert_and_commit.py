@@ -30,13 +30,18 @@ for topic, group in df.groupby("Theme"):
 
     for _, row in group.iterrows():
         raw_date = row["Date"]
+
+        # 🛡️ 避免空白日期造成錯誤
+        if not raw_date.strip():
+            print(f"⚠️ 跳過空日期的資料：{row.to_dict()}")
+            continue
+
         date_obj = datetime.strptime(raw_date, "%Y/%m/%d %H:%M")
         date_str = date_obj.strftime("%Y-%m-%d-%H-%M")
 
         tags = row.get("Tag", "")
-        content = row["Markdown"].replace('\r\n', '\n').replace('\r', '\n')  # 處理換行
+        content = row["Markdown"].replace('\r\n', '\n').replace('\r', '\n')
 
-        # ➤ 單篇 markdown（含 metadata）
         post_filename = f"{date_str}.md"
         with open(f"{folder}/{post_filename}", "w", encoding="utf-8") as f:
             f.write(f"""---
