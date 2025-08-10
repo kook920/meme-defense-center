@@ -60,12 +60,11 @@ date: {raw_date}
 {content}
 """)
 
-        escaped_content = content.replace("```", "ʼʼʼ")  # 避免內容中自己有code block
+        escaped_content = content.replace("```", "ʼʼʼ")  # 避免用戶輸入三反引號
 md_lines.append(f"""## {display_date}
 
-<pre><code>
+```text
 {escaped_content}
-</code></pre>
 """)
 
 # 寫入 index.md
