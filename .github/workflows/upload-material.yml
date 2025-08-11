@@ -1,7 +1,9 @@
 name: Upload Markdown
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # 手動觸發
+  schedule:
+    - cron: '0 * * * *'  # 每小時自動執行一次（UTC 時區）
 
 jobs:
   upload:
