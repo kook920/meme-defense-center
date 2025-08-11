@@ -18,7 +18,7 @@ layout:
 
 # 關於本站
 
-從下方選擇主題進入對應頁面 👇&#x20;
+👈 **從左側選擇主題進入對應頁面**&#x20;
 
 💻 每則貼文右方有 「copy」 按鈕，可以一鍵複製貼文！
 
@@ -28,11 +28,15 @@ layout:
 
 
 
-⚔️ 分享本站：[https://taipai-1.gitbook.io/l-ke-fu-wu-zhong-xin/](https://taipai-1.gitbook.io/l-ke-fu-wu-zhong-xin/)
+⚔️ **分享本站**
+
+[https://taipai-1.gitbook.io/l-ke-fu-wu-zhong-xin/](https://taipai-1.gitbook.io/l-ke-fu-wu-zhong-xin/)
 
 
 
-✒️ 歡迎台派踴躍投稿 [https://forms.gle/yzc79a7JK5iJwhRK8](https://forms.gle/yzc79a7JK5iJwhRK8)&#x20;
+✒️ **歡迎台派踴躍投稿**&#x20;
+
+[https://forms.gle/yzc79a7JK5iJwhRK8](https://forms.gle/yzc79a7JK5iJwhRK8)&#x20;
 
 經過人工審核後會更新上去資料庫 ٩(๑•̀ω•́๑)۶
 
