@@ -14,3 +14,4 @@
 - [中國鬼故事](%E4%B8%AD%E5%9C%8B%E9%AC%BC%E6%95%85%E4%BA%8B/index.md)
 - [台美關稅](%E5%8F%B0%E7%BE%8E%E9%97%9C%E7%A8%85/index.md)
 - [核三公投](%E6%A0%B8%E4%B8%89%E5%85%AC%E6%8A%95/index.md)
+- [開闢話題](%E9%96%8B%E9%97%A2%E8%A9%B1%E9%A1%8C/index.md)
