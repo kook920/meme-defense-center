@@ -1,4 +1,5 @@
 ---
+description: 🔒 面對鎖圖片的惡質媒體，想反擊又覺得心累嗎？
 layout:
   width: default
   title:
@@ -15,11 +16,7 @@ layout:
     visible: false
 ---
 
-# 首頁
-
-面對被鎖圖片的惡質媒體，想反擊又覺得心累嗎？
-
-
+# 關於本站
 
 從下方選擇主題進入對應頁面 👇&#x20;
 
@@ -31,6 +28,13 @@ layout:
 
 
 
-也歡迎台派踴躍投稿 [https://forms.gle/yzc79a7JK5iJwhRK8](https://forms.gle/yzc79a7JK5iJwhRK8) ٩(๑•̀ω•́๑)۶
+⚔️ 分享本站：[https://taipai-1.gitbook.io/l-ke-fu-wu-zhong-xin/](https://taipai-1.gitbook.io/l-ke-fu-wu-zhong-xin/)
 
-經過人工審核後會更新上去資料庫
+
+
+✒️ 歡迎台派踴躍投稿 [https://forms.gle/yzc79a7JK5iJwhRK8](https://forms.gle/yzc79a7JK5iJwhRK8)&#x20;
+
+經過人工審核後會更新上去資料庫 ٩(๑•̀ω•́๑)۶
+
+
+

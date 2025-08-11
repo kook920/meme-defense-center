@@ -1,6 +1,6 @@
 # Table of contents
 
-* [首頁](README.md)
+* [關於本站](README.md)
 * [馬文君](馬文君/index.md)
 * [國民黨](國民黨/index.md)
 * [中國侵略](中國侵略/index.md)
