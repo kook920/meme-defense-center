@@ -12,3 +12,5 @@
 - [江啟臣](%E6%B1%9F%E5%95%9F%E8%87%A3/index.md)
 - [林思銘](%E6%9E%97%E6%80%9D%E9%8A%98/index.md)
 - [中國鬼故事](%E4%B8%AD%E5%9C%8B%E9%AC%BC%E6%95%85%E4%BA%8B/index.md)
+- [台美關稅](%E5%8F%B0%E7%BE%8E%E9%97%9C%E7%A8%85/index.md)
+- [核三公投](%E6%A0%B8%E4%B8%89%E5%85%AC%E6%8A%95/index.md)
