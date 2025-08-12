@@ -15,3 +15,6 @@
 - [台美關稅](%E5%8F%B0%E7%BE%8E%E9%97%9C%E7%A8%85/index.md)
 - [核三公投](%E6%A0%B8%E4%B8%89%E5%85%AC%E6%8A%95/index.md)
 - [開闢話題](%E9%96%8B%E9%97%A2%E8%A9%B1%E9%A1%8C/index.md)
+- [闢謠(防守)](%E9%97%A2%E8%AC%A0%28%E9%98%B2%E5%AE%88%29/index.md)
+- [時事(進攻)](%E6%99%82%E4%BA%8B%28%E9%80%B2%E6%94%BB%29/index.md)
+- [emoji大字報](emoji%E5%A4%A7%E5%AD%97%E5%A0%B1/index.md)
