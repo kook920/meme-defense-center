@@ -52,7 +52,15 @@ for (theme, topic), group in df.groupby(["Theme", "Topic"]):
     with open(f"{folder}/index.md", "w", encoding="utf-8") as f:
         f.write(f"# {theme}/{topic}\n\n" + "\n\n---\n\n".join(md_lines))
 
-# 🧱 自動產生 GitBook SUMMARY.md
+# 🧭 自動產生 GitBook SUMMARY.md（依照 Google Sheets 出現順序）
+seen_themes = set()
+ordered_themes = []
+
+for theme in df["Theme"]:
+    if theme not in seen_themes:
+        seen_themes.add(theme)
+        ordered_themes.append(theme.strip())
+
 with open("SUMMARY.md", "w", encoding="utf-8") as f:
     f.write("# Summary\n\n")
     f.write("- [首頁](README.md)\n")
