@@ -24,6 +24,8 @@
 - [中國鬼故事](%E4%B8%AD%E5%9C%8B%E9%AC%BC%E6%95%85%E4%BA%8B/index.md)
   - [弱肉強食](%E4%B8%AD%E5%9C%8B%E9%AC%BC%E6%95%85%E4%BA%8B/%E5%BC%B1%E8%82%89%E5%BC%B7%E9%A3%9F/index.md)
   - [教育崩壞](%E4%B8%AD%E5%9C%8B%E9%AC%BC%E6%95%85%E4%BA%8B/%E6%95%99%E8%82%B2%E5%B4%A9%E5%A3%9E/index.md)
+  - [薪資過低](%E4%B8%AD%E5%9C%8B%E9%AC%BC%E6%95%85%E4%BA%8B/%E8%96%AA%E8%B3%87%E9%81%8E%E4%BD%8E/index.md)
+  - [財產0保障](%E4%B8%AD%E5%9C%8B%E9%AC%BC%E6%95%85%E4%BA%8B/%E8%B2%A1%E7%94%A20%E4%BF%9D%E9%9A%9C/index.md)
 - [國民黨](%E5%9C%8B%E6%B0%91%E9%BB%A8/index.md)
   - [emoji大字報](%E5%9C%8B%E6%B0%91%E9%BB%A8/emoji%E5%A4%A7%E5%AD%97%E5%A0%B1/index.md)
   - [中國學歷](%E5%9C%8B%E6%B0%91%E9%BB%A8/%E4%B8%AD%E5%9C%8B%E5%AD%B8%E6%AD%B7/index.md)
