@@ -64,6 +64,7 @@
   - [出賣台灣](%E6%B0%91%E7%9C%BE%E9%BB%A8/%E5%87%BA%E8%B3%A3%E5%8F%B0%E7%81%A3/index.md)
   - [多重議題](%E6%B0%91%E7%9C%BE%E9%BB%A8/%E5%A4%9A%E9%87%8D%E8%AD%B0%E9%A1%8C/index.md)
   - [柯文哲起訴](%E6%B0%91%E7%9C%BE%E9%BB%A8/%E6%9F%AF%E6%96%87%E5%93%B2%E8%B5%B7%E8%A8%B4/index.md)
+  - [立委行徑](%E6%B0%91%E7%9C%BE%E9%BB%A8/%E7%AB%8B%E5%A7%94%E8%A1%8C%E5%BE%91/index.md)
   - [黃國昌](%E6%B0%91%E7%9C%BE%E9%BB%A8/%E9%BB%83%E5%9C%8B%E6%98%8C/index.md)
 - [江啟臣](%E6%B1%9F%E5%95%9F%E8%87%A3/index.md)
   - [多重議題](%E6%B1%9F%E5%95%9F%E8%87%A3/%E5%A4%9A%E9%87%8D%E8%AD%B0%E9%A1%8C/index.md)
