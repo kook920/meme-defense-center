@@ -11,5 +11,3 @@
 - [癱瘓國家](%E7%99%B1%E7%98%93%E5%9C%8B%E5%AE%B6/index.md)
 - [罷免](%E7%BD%B7%E5%85%8D/index.md)
 - [關稅](%E9%97%9C%E7%A8%85/index.md)
-- [防疫](%E9%98%B2%E7%96%AB/index.md)
-- [風災](%E9%A2%A8%E7%81%BD/index.md)
