@@ -67,7 +67,7 @@ with open(os.path.join(temp_root, "README.md"), "w", encoding="utf-8") as f:
     for zone, themes in zone_map.items():
         f.write(f"### {zone}\n")
         for theme in themes:
-            f.write(f"- [{theme}]({urllib.parse.quote(zone)}/{urllib.parse.quote(theme)}/index.md)\n")
+            f.write(f"- {theme}\n")   # ← 這裡只保留純文字
         f.write("\n")
 
 # 📖 寫入 SUMMARY.md 到 temp_output/
