@@ -60,7 +60,7 @@ for (_, theme, topic), group in df.groupby(["Zone", "Theme", "Topic"]):
     zone_map.setdefault(zone, {}).setdefault(theme, []).append(topic)
 
 # 🏠 寫入 README.md 到 temp_output/
-with open(os.path.join(temp_root, "README.md"), "w", encoding="utf-8") as f:
+with open("README.md", "w", encoding="utf-8") as f:
     f.write("# 文字素材庫\n\n")
     f.write("🚧 本頁面由自動化腳本產生，內容依據 Google Sheets 即時更新。\n\n")
     f.write("## 分類一覽\n\n")
