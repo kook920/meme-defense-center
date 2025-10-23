@@ -70,7 +70,7 @@ Welcome to Taichung — where miracles of misjudgment happen daily. 🐖✨
 地方政府？免問免問、毫髮無傷！
 
 熟悉嗎？太熟了。
-還記得花蓮強震嗎？
+還記得花蓮堰塞湖嗎？
 中央背鍋、縣政府卸責
 輿論起舞、抹黑幫忙的鏟子超人、抹黑中央～
 👻 同一批廚師、同一套劇本、不同的災難，回收再利用！
