@@ -341,7 +341,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 ---
 
-## 國民黨/民眾黨/裝乖/亂刪預算/防疫宣傳費/非洲豬瘟失守
+## 真相揭露/國民黨/民眾黨/刪預算
 
 ```
 誰做的事，就要大聲說出來！
