@@ -162,7 +162,7 @@ Welcome to Taichung — where miracles of misjudgment happen daily. 🐖✨
 
 ---
 
-## 真相揭露/國民黨/民眾黨/刪減預算
+## 真相揭露/國民黨/民眾黨/刪減防疫預算
 
 ```
 對抗非洲豬瘟的預算遠遠不止宣導經費！
