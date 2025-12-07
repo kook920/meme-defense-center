@@ -86,15 +86,19 @@ for zone, themes in zone_map.items():
 
 # 🏠 寫入 README.md 到 temp_output/
 with open(os.path.join(temp_root, "README.md"), "w", encoding="utf-8") as f:
-    f.write("# 文字素材庫\n\n")
+    f.write("# 文字素材庫（網站地圖）\n\n")
     f.write("[回到入口頁 ➡](https://taipai-1.gitbook.io/l-ke-fu-wu-zhong-xin/)\n\n")
     f.write("🚧 本頁面由自動化腳本產生，內容依據 Google Sheets 即時更新。\n\n")
-    f.write("## 分類一覽\n\n")
-    for zone, themes in zone_map.items():
-        f.write(f"### {zone}\n")
-        for theme in themes:
-            f.write(f"- {theme}\n")   # ← 保留純文字
-        f.write("\n")
+    f.write("## 網站地圖 Site Map\n\n")
+
+    for zone, themes in sorted(zone_map.items()):
+        f.write(f"### {zone}\n\n")
+        for theme, topics in sorted(themes.items()):
+            f.write(f"- **{theme}**\n")
+            for topic in sorted(topics):
+                f.write(f"  - {topic}\n")
+            f.write("\n")
+
 
 # 📖 寫入 SUMMARY.md 到 temp_output/
 with open(os.path.join(temp_root, "SUMMARY.md"), "w", encoding="utf-8") as f:
