@@ -34,20 +34,14 @@ os.makedirs(temp_root)
 zone_map = {}
 
 # 📂 寫入 Zone/Theme/Topic 結構到 temp_output/
-# 🔧 重點 1：不再建立「topic 資料夾 + index.md」
-#           改成 theme 資料夾裡面直接放「Topic.md」
 for (zone_raw, theme, topic), group in df.groupby(["Zone", "Theme", "Topic"]):
     zone = (str(zone_raw) or "未分類").strip()
     theme = theme.strip()
     topic = topic.strip()
 
-    # Theme 資料夾
-    theme_folder = os.path.join(temp_root, zone, theme)
-    os.makedirs(theme_folder, exist_ok=True)
-
-    # 如果有特殊字元再處理檔名，暫時先用原 Topic 當檔名
-    topic_filename = f"{topic}.md"
-    topic_filepath = os.path.join(theme_folder, topic_filename)
+    # topic 底下照舊：Zone/Theme/Topic/index.md
+    folder_path = os.path.join(temp_root, zone, theme, topic)
+    os.makedirs(folder_path, exist_ok=True)
 
     md_lines = []
     for _, row in group.iterrows():
@@ -61,30 +55,36 @@ for (zone_raw, theme, topic), group in df.groupby(["Zone", "Theme", "Topic"]):
         wrapped_content = f"```\n{content}\n```"
         md_lines.append(f"## {section_title}\n\n{wrapped_content}")
 
-    # 🔧 每個 Topic 一個獨立檔案：<Theme>/<Topic>.md
-    with open(topic_filepath, "w", encoding="utf-8") as f:
+    with open(os.path.join(folder_path, "index.md"), "w", encoding="utf-8") as f:
         f.write(f"# {theme}/{topic}\n\n" + "\n\n---\n\n".join(md_lines))
 
     zone_map.setdefault(zone, {}).setdefault(theme, []).append(topic)
 
-# 🔧 額外補上 Zone 層級 README 與 Theme 層級 index.md（SUMMARY 有連結）
+# 🔧 新增一層：為每個 Zone / Theme 建出對應頁面
 for zone, themes in zone_map.items():
     zone_dir = os.path.join(temp_root, zone)
     os.makedirs(zone_dir, exist_ok=True)
+
+    # Zone 對應 /shi-xia-hua-ti 這類頁面
     zone_readme = os.path.join(zone_dir, "README.md")
     if not os.path.exists(zone_readme):
         with open(zone_readme, "w", encoding="utf-8") as f:
             f.write(f"# {zone}\n\n")
+            f.write("本區主題列表：\n\n")
             for theme in themes.keys():
                 f.write(f"- {theme}\n")
 
-    for theme in themes.keys():
+    # Theme 對應 /shi-xia-hua-ti/zhong-guo-qin-lve 這類頁面
+    for theme, topics in themes.items():
         theme_dir = os.path.join(zone_dir, theme)
         os.makedirs(theme_dir, exist_ok=True)
         theme_index = os.path.join(theme_dir, "index.md")
         if not os.path.exists(theme_index):
             with open(theme_index, "w", encoding="utf-8") as f:
                 f.write(f"# {theme}\n\n")
+                f.write("本主題底下的素材：\n\n")
+                for topic in sorted(topics):
+                    f.write(f"- {topic}\n")
 
 # 🏠 寫入 README.md 到 temp_output/
 with open(os.path.join(temp_root, "README.md"), "w", encoding="utf-8") as f:
@@ -104,15 +104,20 @@ with open(os.path.join(temp_root, "SUMMARY.md"), "w", encoding="utf-8") as f:
     f.write("- [首頁](README.md)\n")
     for zone, themes in sorted(zone_map.items()):
         zone_enc = urllib.parse.quote(zone)
+        # Zone level：/shi-xia-hua-ti
         f.write(f"- [{zone}]({zone_enc}/README.md)\n")
+
         for theme, topics in sorted(themes.items()):
             theme_enc = urllib.parse.quote(theme)
             theme_path = f"{zone_enc}/{theme_enc}"
+            # Theme level：/shi-xia-hua-ti/zhong-guo-qin-lve
             f.write(f"  - [{theme}]({theme_path}/index.md)\n")
+
             for topic in sorted(topics):
                 topic_enc = urllib.parse.quote(topic)
-                # 🔧 這裡連到 <Theme>/<Topic>.md
-                f.write(f"    - [{topic}]({theme_path}/{topic_enc}.md)\n")
+                topic_path = f"{theme_path}/{topic_enc}"
+                # Topic level：/shi-xia-hua-ti/zhong-guo-qin-lve/index / index-1 ...
+                f.write(f"    - [{topic}]({topic_path}/index.md)\n")
 
 # 🪄 一次性替換原始資料夾
 for name in os.listdir():
