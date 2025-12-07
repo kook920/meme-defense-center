@@ -134,4 +134,5 @@ shutil.rmtree(temp_root)
 os.system("git config --global user.name 'github-actions'")
 os.system("git config --global user.email 'github-actions@users.noreply.github.com'")
 os.system("git add .")
-os.system('git commit -
+os.system('git commit -m "Auto upload material" || echo "🟡 Nothing to commit"')
+os.system("git push")
