@@ -39,7 +39,7 @@ for (zone_raw, theme, topic), group in df.groupby(["Zone", "Theme", "Topic"]):
     theme = theme.strip()
     topic = topic.strip()
 
-    # topic 底下照舊：Zone/Theme/Topic/index.md
+    # Topic 底下照舊：Zone/Theme/Topic/index.md
     folder_path = os.path.join(temp_root, zone, theme, topic)
     os.makedirs(folder_path, exist_ok=True)
 
@@ -60,12 +60,12 @@ for (zone_raw, theme, topic), group in df.groupby(["Zone", "Theme", "Topic"]):
 
     zone_map.setdefault(zone, {}).setdefault(theme, []).append(topic)
 
-# 🔧 新增一層：為每個 Zone / Theme 建出對應頁面
+# 🔧 為每個 Zone 建 README，為每個 Theme 建「單一 md 檔」
 for zone, themes in zone_map.items():
     zone_dir = os.path.join(temp_root, zone)
     os.makedirs(zone_dir, exist_ok=True)
 
-    # Zone 對應 /shi-xia-hua-ti 這類頁面
+    # Zone level：/shi-xia-hua-ti
     zone_readme = os.path.join(zone_dir, "README.md")
     if not os.path.exists(zone_readme):
         with open(zone_readme, "w", encoding="utf-8") as f:
@@ -74,13 +74,11 @@ for zone, themes in zone_map.items():
             for theme in themes.keys():
                 f.write(f"- {theme}\n")
 
-    # Theme 對應 /shi-xia-hua-ti/zhong-guo-qin-lve 這類頁面
+    # Theme level：用「Zone/Theme.md」代表
     for theme, topics in themes.items():
-        theme_dir = os.path.join(zone_dir, theme)
-        os.makedirs(theme_dir, exist_ok=True)
-        theme_index = os.path.join(theme_dir, "index.md")
-        if not os.path.exists(theme_index):
-            with open(theme_index, "w", encoding="utf-8") as f:
+        theme_md_path = os.path.join(zone_dir, f"{theme}.md")
+        if not os.path.exists(theme_md_path):
+            with open(theme_md_path, "w", encoding="utf-8") as f:
                 f.write(f"# {theme}\n\n")
                 f.write("本主題底下的素材：\n\n")
                 for topic in sorted(topics):
@@ -104,19 +102,21 @@ with open(os.path.join(temp_root, "SUMMARY.md"), "w", encoding="utf-8") as f:
     f.write("- [首頁](README.md)\n")
     for zone, themes in sorted(zone_map.items()):
         zone_enc = urllib.parse.quote(zone)
-        # Zone level：/shi-xia-hua-ti
+        # Zone level
         f.write(f"- [{zone}]({zone_enc}/README.md)\n")
 
         for theme, topics in sorted(themes.items()):
             theme_enc = urllib.parse.quote(theme)
-            theme_path = f"{zone_enc}/{theme_enc}"
-            # Theme level：/shi-xia-hua-ti/zhong-guo-qin-lve
-            f.write(f"  - [{theme}]({theme_path}/index.md)\n")
 
+            # 🔧 Theme level：指向 Zone/Theme.md，而不是 Zone/Theme/index.md
+            theme_md_relpath = f"{zone_enc}/{theme_enc}.md"
+            f.write(f"  - [{theme}]({theme_md_relpath})\n")
+
+            # Topic level：仍然是 Zone/Theme/Topic/index.md
+            theme_path = f"{zone_enc}/{theme_enc}"
             for topic in sorted(topics):
                 topic_enc = urllib.parse.quote(topic)
                 topic_path = f"{theme_path}/{topic_enc}"
-                # Topic level：/shi-xia-hua-ti/zhong-guo-qin-lve/index / index-1 ...
                 f.write(f"    - [{topic}]({topic_path}/index.md)\n")
 
 # 🪄 一次性替換原始資料夾
@@ -134,5 +134,4 @@ shutil.rmtree(temp_root)
 os.system("git config --global user.name 'github-actions'")
 os.system("git config --global user.email 'github-actions@users.noreply.github.com'")
 os.system("git add .")
-os.system('git commit -m "Auto upload material" || echo "🟡 Nothing to commit"')
-os.system("git push")
+os.system('git commit -
