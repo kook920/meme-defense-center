@@ -67,4 +67,72 @@ for zone, themes in zone_map.items():
     os.makedirs(zone_dir, exist_ok=True)
 
     # Zone level：Zone/README.md
-    zone
+    zone_readme = os.path.join(zone_dir, "README.md")
+    if not os.path.exists(zone_readme):
+        with open(zone_readme, "w", encoding="utf-8") as f:
+            f.write(f"# {zone}\n\n")
+
+    # Theme level：Zone/Theme/README.md
+    for theme, topics in themes.items():
+        theme_dir = os.path.join(zone_dir, theme)
+        os.makedirs(theme_dir, exist_ok=True)
+
+        theme_readme = os.path.join(theme_dir, "README.md")
+        if not os.path.exists(theme_readme):
+            # 留白，讓 GitBook 自己在這頁列出底下 Topic 的按鈕
+            open(theme_readme, "w", encoding="utf-8").close()
+
+# 🏠 首頁：網站地圖 Site Map
+with open(os.path.join(temp_root, "README.md"), "w", encoding="utf-8") as f:
+    f.write("# 文字素材庫（網站地圖）\n\n")
+    f.write("[回到入口頁 ➡](https://taipai-1.gitbook.io/l-ke-fu-wu-zhong-xin/)\n\n")
+    f.write("🚧 本頁面由自動化腳本產生，內容依據 Google Sheets 即時更新。\n\n")
+    f.write("## 網站地圖 Site Map\n\n")
+
+    for zone, themes in sorted(zone_map.items()):
+        f.write(f"### {zone}\n\n")
+        for theme, topics in sorted(themes.items()):
+            f.write(f"- **{theme}**\n")
+            for topic in sorted(topics):
+                f.write(f"  - {topic}\n")
+            f.write("\n")
+
+# 📖 寫入 SUMMARY.md 到 temp_output/
+with open(os.path.join(temp_root, "SUMMARY.md"), "w", encoding="utf-8") as f:
+    f.write("# Summary\n\n")
+    f.write("- [首頁](README.md)\n")
+    for zone, themes in sorted(zone_map.items()):
+        zone_enc = urllib.parse.quote(zone)
+        # Zone level：Zone/README.md
+        f.write(f"- [{zone}]({zone_enc}/README.md)\n")
+
+        for theme, topics in sorted(themes.items()):
+            theme_enc = urllib.parse.quote(theme)
+            theme_path = f"{zone_enc}/{theme_enc}"
+
+            # Theme level：Zone/Theme/README.md
+            f.write(f"  - [{theme}]({theme_path}/README.md)\n")
+
+            # Topic level：Zone/Theme/Topic/index.md
+            for topic in sorted(topics):
+                topic_enc = urllib.parse.quote(topic)
+                topic_path = f"{theme_path}/{topic_enc}"
+                f.write(f"    - [{topic}]({topic_path}/index.md)\n")
+
+# 🪄 一次性替換原始資料夾
+for name in os.listdir():
+    if name in [".git", ".github", temp_root]:
+        continue
+    if os.path.isdir(name) or name in ["README.md", "SUMMARY.md"]:
+        shutil.rmtree(name) if os.path.isdir(name) else os.remove(name)
+
+for item in os.listdir(temp_root):
+    shutil.move(os.path.join(temp_root, item), item)
+shutil.rmtree(temp_root)
+
+# 🌀 Git 自動提交
+os.system("git config --global user.name 'github-actions'")
+os.system("git config --global user.email 'github-actions@users.noreply.github.com'")
+os.system("git add .")
+os.system('git commit -m "Auto upload material" || echo "🟡 Nothing to commit"')
+os.system("git push")
