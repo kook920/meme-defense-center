@@ -249,7 +249,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 但事實是...賴清德的兒子：
 👉 沒外國國籍
 👉 沒永久居留證
-👉 都都過當兵
+👉 都過當兵
 
 結果你看【他們】自己👇
 🇺🇸 蔣萬安的兒子，是美國人
