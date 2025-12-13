@@ -6,6 +6,7 @@ import shutil
 from dateutil import parser
 from datetime import datetime
 
+
 def parse_datetime(raw_date):
     try:
         return datetime.strptime(raw_date, "%Y/%m/%d %H:%M")
@@ -16,6 +17,35 @@ def parse_datetime(raw_date):
             print(f"❌ 無法解析日期：{raw_date}")
             return None
 
+
+def render_collapsible_block(content: str, preview_lines: int = 5, lang: str = "text") -> str:
+    """
+    產生：可折疊區塊 + 前 N 行預覽 + 展開後保留 code block 的 Copy 按鈕
+    GitBook 支援 <details>/<summary>，且 code block 仍會顯示 Copy。
+    """
+    safe = (content or "").strip()
+    lines = safe.splitlines()
+
+    preview = "\n".join(lines[:preview_lines]).strip()
+    if len(lines) > preview_lines:
+        preview += "\n…（點擊展開全文）"
+
+    md = f"""
+<details>
+<summary>
+
+📄 預覽（前 {preview_lines} 行）：
+{preview}
+
+</summary>
+
+```{lang}
+{safe}
+```
+</details> 
+""" 
+    return md.strip()
+    
 # 📥 讀取 Google Sheets
 sheet_name = os.environ.get("SHEET_NAME", "審核通過")
 spreadsheet_id = os.environ["SPREADSHEET_ID"]
@@ -52,7 +82,7 @@ for (zone_raw, theme, topic), group in df.groupby(["Zone", "Theme", "Topic"]):
         date_obj = parse_datetime(raw_date)
         display_date = date_obj.strftime("%Y/%m/%d %H:%M") if date_obj else raw_date or "未提供日期"
         section_title = tags or display_date
-        wrapped_content = f"```\n{content}\n```"
+        wrapped_content = render_collapsible_block(content, preview_lines=5, lang="text")
         md_lines.append(f"## {section_title}\n\n{wrapped_content}")
 
     with open(os.path.join(folder_path, "index.md"), "w", encoding="utf-8") as f:
