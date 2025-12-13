@@ -26,7 +26,7 @@ def render_collapsible_block(content: str, preview_lines: int = 5, lang: str = "
     safe = (content or "").strip()
     lines = safe.splitlines()
 
-    preview = " · ".join(
+    preview = " ／ ".join(
     line.strip() for line in lines[:preview_lines] if line.strip()
 )
     if len(lines) > preview_lines:
