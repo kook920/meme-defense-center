@@ -2,7 +2,19 @@
 
 ## 馬雲/阿里巴巴/螞蟻集團/黨的意志/強取豪奪
 
-```
+<details>
+<summary>
+
+📄 預覽（前 5 行）：
+https://www.youtube.com/shorts/gj8xrPTY5_0
+
+曾經風光整個華人社會的大企業家馬雲
+如今正式走下權力舞台。🔚
+…（點擊展開全文）
+
+</summary>
+
+```text
 https://www.youtube.com/shorts/gj8xrPTY5_0
 
 曾經風光整個華人社會的大企業家馬雲
@@ -17,3 +29,4 @@ https://www.youtube.com/shorts/gj8xrPTY5_0
 「你賺錢可以，但不能違背黨的意志」
 誰敢挑戰，就會像馬雲一樣被打到兩手空空、黯然退場。
 ```
+</details>
