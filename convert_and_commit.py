@@ -38,6 +38,7 @@ def render_collapsible_block(content: str, preview_lines: int = 5, lang: str = "
 
 📄 預覽（前 {preview_lines} 行）：
 
+
 {preview}
 
 </summary>
