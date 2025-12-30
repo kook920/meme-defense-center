@@ -11,7 +11,7 @@
 
 </summary>
 
-```text
+~~~text
 有位中國法律系女畢業生，現在實習律師的生活讓人心疼
 ——她每月薪水是 2500 元人民幣，💸 扣了高達 1800 元的社保費，結帳後只剩下 700 元。
 平均每天工作下來，她是拿人錢還倒貼上班，真的快撐不下去了！
@@ -23,7 +23,7 @@
 這也是反映出現今中國就業情況的縮影：經濟下行、大學生找不到好工作、勉強撐著上班，卻換來的是更深的焦慮與無力。
 
 https://www.youtube.com/watch?v=cg0qEAcDW14
-```
+~~~
 </details>
 
 ---
@@ -38,12 +38,12 @@ https://www.youtube.com/watch?v=cg0qEAcDW14
 
 </summary>
 
-```text
+~~~text
 中國繁榮泡泡破滅！整個社會死氣沈沈！
 中國人進入最煎熬的時代，努力求生到最後還是只能躺平擺爛、迷茫焦慮！
 
 https://www.youtube.com/watch?v=EJIVIzeIVbQ
-```
+~~~
 </details>
 
 ---
@@ -59,7 +59,7 @@ https://www.youtube.com/watch?v=EJIVIzeIVbQ
 
 </summary>
 
-```text
+~~~text
 中國黑龍江一場企業徵才活動，原本要招9000人，結果湧入11萬人應徵，畫面震撼。📉
 
 薪資行情讓人難以置信：
@@ -81,7 +81,7 @@ https://www.youtube.com/watch?v=EJIVIzeIVbQ
 我們不歧視移民，而是必須問清楚：誰來承擔後果？如何把關？
 
 🛑 台灣人，不能再裝睡了。
-```
+~~~
 </details>
 
 ---
@@ -97,7 +97,7 @@ https://www.youtube.com/watch?v=EJIVIzeIVbQ
 
 </summary>
 
-```text
+~~~text
 🔥 中國博士起薪僅1.2萬？黑龍江徵才現場引爆輿論！
 
 中國高學歷就業現況再度引爆關注！在黑龍江哈爾濱市一場徵才會上，圖書館開出博士月薪僅3000–4000元人民幣（約新台幣1.2–1.7萬），讓網友震驚喊：「博士都不值錢了？」
@@ -108,7 +108,7 @@ https://www.youtube.com/watch?v=EJIVIzeIVbQ
 （養老險💸、醫療險💸、失業險💸、工傷險💸、生育險💸、房屋公積金💸、企業年金💸）後，有博士實拿僅3000多人民幣（約台幣1.3萬），網友大嘆：「讀到博士還這麼辛酸，到底圖什麼？🤯」
 
 📉中國經濟低迷下，高學歷不保，學歷通膨正在全面浮現。
-```
+~~~
 </details>
 
 ---
@@ -124,7 +124,7 @@ https://www.youtube.com/watch?v=EJIVIzeIVbQ
 
 </summary>
 
-```text
+~~~text
 中國「打工紅利時代」真的結束了嗎？
 這支影片帶你直擊深圳、上海等大城市現場，勞動市場正面臨大規模裁員、公司連環倒閉，搶工作變得前所未有的困難。
 
@@ -133,5 +133,5 @@ https://www.youtube.com/watch?v=EJIVIzeIVbQ
 影片警告：現在的中國，失業不再只是危機，而是「百分之百會發生的事」。不論你是新鮮人還是老鳥，面對這樣的現實，都得提前準備，因為下一波職場寒冬，隨時會降臨。
 
 中國版求職冰河期：https://www.youtube.com/watch?v=GsiqCC8fg0k
-```
+~~~
 </details>

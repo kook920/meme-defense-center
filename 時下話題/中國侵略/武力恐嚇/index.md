@@ -11,14 +11,14 @@
 
 </summary>
 
-```text
+~~~text
 共軍擾台？
 我以前覺得，民進黨太囂張了，
 多飛幾次有什麼不好。
 
 直到⋯⋯
 https://www.instagram.com/reel/DNO6IJ-zi8O/
-```
+~~~
 </details>
 
 ---
@@ -34,7 +34,7 @@ https://www.instagram.com/reel/DNO6IJ-zi8O/
 
 </summary>
 
-```text
+~~~text
 當有人問「台灣為何不能在親中又親美」——聽起來理性，其實錯很大。讓我們用事實說話👇
 
 🇺🇸 美國對台灣
@@ -48,7 +48,7 @@ https://www.instagram.com/reel/DNO6IJ-zi8O/
 
 台灣不是沒選擇，而是早就被時勢選上。
 你想不站隊，但世界已經開戰。要選哪一邊，夠清楚嗎？
-```
+~~~
 </details>
 
 ---
@@ -64,7 +64,7 @@ https://www.instagram.com/reel/DNO6IJ-zi8O/
 
 </summary>
 
-```text
+~~~text
 習近平說：
 「我們會努力爭取和平統一，
 但絕不承諾放棄使用武力犯台。」
@@ -72,7 +72,7 @@ https://www.instagram.com/reel/DNO6IJ-zi8O/
 就好比有個男人說：
 「我會盡全力追求她，
 但我絕不保證不會強姦她。」
-```
+~~~
 </details>
 
 ---
@@ -88,12 +88,12 @@ https://www.instagram.com/reel/DNO6IJ-zi8O/
 
 </summary>
 
-```text
+~~~text
 其實賴清德總統真的只是把美國國防部公布的東西講一遍而已啊，民進黨中央根本沒在賣什麼芒果乾。
 
 美國早就公開講過好幾次，說習近平下令2027年前要有攻台能力，這都第四次警告了。
 有在關心新聞的人，應該都知道美國這個說法講超過一年了。
 
 但台灣主流好像真的很少人在乎國際新聞，只會在意外國牛奶雞蛋有沒有比台灣便宜而已。
-```
+~~~
 </details>

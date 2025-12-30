@@ -11,7 +11,7 @@ https://www.youtube.com/shorts/gj8xrPTY5_0 ／ 曾經風光整個華人社會的
 
 </summary>
 
-```text
+~~~text
 https://www.youtube.com/shorts/gj8xrPTY5_0
 
 曾經風光整個華人社會的大企業家馬雲
@@ -25,5 +25,5 @@ https://www.youtube.com/shorts/gj8xrPTY5_0
 中共表面上說是要規範科技金融，實際上是告訴所有民企：
 「你賺錢可以，但不能違背黨的意志」
 誰敢挑戰，就會像馬雲一樣被打到兩手空空、黯然退場。
-```
+~~~
 </details>

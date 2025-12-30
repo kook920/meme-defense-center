@@ -11,7 +11,7 @@ https://www.youtube.com/shorts/HnJzJmQAhk4🇹🇼 ／ 一位在中國經商五�
 
 </summary>
 
-```text
+~~~text
 https://www.youtube.com/shorts/HnJzJmQAhk4🇹🇼 
 
 一位在中國經商五年的台灣人，離開後親口說出心底話：
@@ -25,7 +25,7 @@ https://www.youtube.com/shorts/HnJzJmQAhk4🇹🇼
 👉 這不是政治口號，是一個在中國打拼多年的人，用錢、時間、人生換來的體會。
 
 ⚠️ 民主自由不是天上掉下來的，如果我們不守護，終究會變成他們口中「曾經很幸福」的台灣。
-```
+~~~
 </details>
 
 ---
@@ -41,7 +41,7 @@ https://www.youtube.com/shorts/HnJzJmQAhk4🇹🇼
 
 </summary>
 
-```text
+~~~text
 動漫宅！
 中國人衝金門《鬼滅之刃》你嚇到了嗎？
 等到完全被強行統一，你喜歡的動漫還可能在台灣完全下架！
@@ -56,7 +56,7 @@ https://www.youtube.com/shorts/HnJzJmQAhk4🇹🇼
 
 這樣的文化環境，就是被統一以後的台灣。📣請大家告訴大家。
 ⚠️再繼續親中，台灣就沒有娛樂文化自由可言！⚠️
-```
+~~~
 </details>
 
 ---
@@ -72,7 +72,7 @@ https://www.youtube.com/shorts/HnJzJmQAhk4🇹🇼
 
 </summary>
 
-```text
+~~~text
 英國與愛爾蘭的教授聯合研究揭露：中國品牌手機如 小米、OnePlus 和 Realme，在未經用戶同意的情況下，會將手機中的敏感個資上傳給第三方伺服器。
 
 外流內容包括：
@@ -90,7 +90,7 @@ https://www.youtube.com/shorts/HnJzJmQAhk4🇹🇼
 
 你以為擁有手機，其實是它擁有你。
 難怪每次蘋果發新機，財力許可的中國人都搶到頭破血流。
-```
+~~~
 </details>
 
 ---
@@ -106,7 +106,7 @@ https://www.youtube.com/shorts/HnJzJmQAhk4🇹🇼
 
 </summary>
 
-```text
+~~~text
 這位台灣人分享了自己在商務聚會中，與一位中國主管的對話內容：
 
 當時他好奇地問，為什麼中國製的某個零件可以壓到那麼低的價格。對方直言：「我們那邊很卷（競爭激烈），大家都在瘋狂削價，只求先把別人搞死，沒人在乎能不能長久。」
@@ -116,7 +116,7 @@ https://www.youtube.com/shorts/HnJzJmQAhk4🇹🇼
 接著話題轉向政治，這位中國主管低聲說，其實中國人很多也不希望統一台灣，「因為我們也想要自由。要統一也該是台灣統一大陸才對。」
 
 他補充，哪怕中國很有錢，那也是共產黨的錢，跟人民沒關係。他甚至笑著說：「你知道嗎？希望台灣統一中國這句話，我聽過很多人說。我們只是不能公開講罷了。」
-```
+~~~
 </details>
 
 ---
@@ -132,7 +132,7 @@ https://www.youtube.com/shorts/HnJzJmQAhk4🇹🇼
 
 </summary>
 
-```text
+~~~text
 化名夏巢川的他，在白紙運動期間因和平發聲被逮捕，隨即跌入「地獄般」的牢獄日常：單獨監禁、長時間精神與生理折磨，每天都在恐懼與壓力中掙扎。
 
 即使被要求錄製「電視認罪」影片，他仍咬緊牙關拒絕，堅守自己的良心，不讓假話成為現實。即便無限期監禁的陰影揮之不去，夏巢川依然選擇不向威權妥協。
@@ -140,7 +140,7 @@ https://www.youtube.com/shorts/HnJzJmQAhk4🇹🇼
 最終，他毫不留戀地離開中國，決心把這一段倖存者的經歷公諸於世。這段見證不僅是個人的勇氣，也是對真相的堅持——當恐懼籠罩一切，仍有人敢說出真話。
 
 https://www.youtube.com/watch?v=xJuwaDMvMIQ
-```
+~~~
 </details>
 
 ---
@@ -156,7 +156,7 @@ https://www.youtube.com/watch?v=xJuwaDMvMIQ
 
 </summary>
 
-```text
+~~~text
 2022年底，中國多地爆發了被稱為「白紙運動」的抗議浪潮。
 這場運動起因於烏魯木齊大火造成多人傷亡，民眾不滿極端清零政策帶來的人道災難，走上街頭舉白紙表達無聲抗議。
 
@@ -166,7 +166,7 @@ https://www.youtube.com/watch?v=xJuwaDMvMIQ
 
 當真話成為罪名，社會還能走多遠？
 https://www.youtube.com/watch?v=YbGFQc_3Leo
-```
+~~~
 </details>
 
 ---
@@ -182,7 +182,7 @@ https://www.youtube.com/watch?v=YbGFQc_3Leo
 
 </summary>
 
-```text
+~~~text
 ​看到有人在吹捧中國高鐵的實名制安檢
 真的大可不必✋️
 ​
@@ -202,5 +202,5 @@ https://www.youtube.com/watch?v=YbGFQc_3Leo
 請珍惜這份不被老大哥盯著看的權利
 不要因為一時的恐懼
 就想把自由雙手奉上🚫
-```
+~~~
 </details>

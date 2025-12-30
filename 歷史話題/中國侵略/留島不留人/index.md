@@ -11,7 +11,7 @@
 
 </summary>
 
-```text
+~~~text
 我們不要和平協議
 因為我們不想再被說謊慣犯(中共)騙了。
 
@@ -27,5 +27,5 @@
 讓想簽協議的人知道——台灣不會再信了！
 
 https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
-```
+~~~
 </details>
