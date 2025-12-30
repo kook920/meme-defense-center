@@ -19,6 +19,17 @@ def parse_datetime(raw_date):
 
 import html
 
+def sanitize_code_content(s: str) -> str:
+    """
+    防止素材內容內含 ``` 或 ~~~ 造成巢狀 code fence 爆炸
+    用零寬字元打斷 fence
+    """
+    if not s:
+        return ""
+    s = s.replace("```", "``\u200b`")
+    s = s.replace("~~~", "~~\u200b~")
+    return s
+
 def render_collapsible_block(content: str, preview_lines: int = 5, lang: str = "text") -> str:
     safe_raw = (content or "").strip()
     safe = sanitize_code_content(safe_raw)
