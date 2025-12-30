@@ -149,16 +149,38 @@ with open(os.path.join(temp_root, "SUMMARY.md"), "w", encoding="utf-8") as f:
                 topic_path = f"{theme_path}/{topic}"
                 f.write(f"    - [{topic}]({topic_path}/index.md)\n")
 
-# 🪄 一次性替換原始資料夾
-for name in os.listdir():
-    if name in [".git", ".github", temp_root]:
-        continue
-    if os.path.isdir(name) or name in ["README.md", "SUMMARY.md"]:
-        shutil.rmtree(name) if os.path.isdir(name) else os.remove(name)
+# 🪄 一次性替換原始資料夾 - 加強版
+print("🧹 清理舊檔案...")
 
+# 先列出所有要刪除的項目
+items_to_delete = []
+for name in os.listdir():
+    if name not in [".git", ".github", temp_root, ".gitignore"]:
+        items_to_delete.append(name)
+
+# 刪除所有舊內容
+for name in items_to_delete:
+    path = os.path.join(os.getcwd(), name)
+    try:
+        if os.path.isdir(path):
+            print(f"  刪除資料夾: {name}")
+            shutil.rmtree(path)
+        else:
+            print(f"  刪除檔案: {name}")
+            os.remove(path)
+    except Exception as e:
+        print(f"  ⚠️ 無法刪除 {name}: {e}")
+
+print("📦 移入新檔案...")
+# 移入新內容
 for item in os.listdir(temp_root):
-    shutil.move(os.path.join(temp_root, item), item)
+    src = os.path.join(temp_root, item)
+    dst = os.path.join(os.getcwd(), item)
+    print(f"  移動: {item}")
+    shutil.move(src, dst)
+
 shutil.rmtree(temp_root)
+print("✅ 檔案結構更新完成")
 
 # 🌀 Git 自動提交
 os.system("git config --global user.name 'github-actions'")
