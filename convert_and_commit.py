@@ -27,8 +27,8 @@ def render_collapsible_block(content: str, preview_lines: int = 5, lang: str = "
     lines = safe.splitlines()
 
     preview = " ／ ".join(
-    line.strip() for line in lines[:preview_lines] if line.strip()
-)
+        line.strip() for line in lines[:preview_lines] if line.strip()
+    )
     if len(lines) > preview_lines:
         preview += "\n…（點擊展開全文）"
 
@@ -130,25 +130,23 @@ with open(os.path.join(temp_root, "README.md"), "w", encoding="utf-8") as f:
             f.write("\n")
 
 # 📖 寫入 SUMMARY.md 到 temp_output/
+# ✅ 關鍵修改：移除所有 urllib.parse.quote()，直接使用中文路徑
 with open(os.path.join(temp_root, "SUMMARY.md"), "w", encoding="utf-8") as f:
     f.write("# Summary\n\n")
     f.write("- [首頁](README.md)\n")
     for zone, themes in sorted(zone_map.items()):
-        zone_enc = urllib.parse.quote(zone)
-        # Zone level：Zone/README.md
-        f.write(f"- [{zone}]({zone_enc}/README.md)\n")
+        # ✅ 直接使用中文，不編碼
+        f.write(f"- [{zone}]({zone}/README.md)\n")
 
         for theme, topics in sorted(themes.items()):
-            theme_enc = urllib.parse.quote(theme)
-            theme_path = f"{zone_enc}/{theme_enc}"
-
-            # Theme level：Zone/Theme/README.md
+            # ✅ 直接使用中文路徑
+            theme_path = f"{zone}/{theme}"
             f.write(f"  - [{theme}]({theme_path}/README.md)\n")
 
             # Topic level：Zone/Theme/Topic/index.md
             for topic in sorted(topics):
-                topic_enc = urllib.parse.quote(topic)
-                topic_path = f"{theme_path}/{topic_enc}"
+                # ✅ 直接使用中文路徑
+                topic_path = f"{theme_path}/{topic}"
                 f.write(f"    - [{topic}]({topic_path}/index.md)\n")
 
 # 🪄 一次性替換原始資料夾
