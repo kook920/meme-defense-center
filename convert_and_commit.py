@@ -41,9 +41,9 @@ def render_collapsible_block(content: str, preview_lines: int = 5, lang: str = "
 
 </summary>
 
-```{lang}
+~~~{lang}
 {safe}
-```
+~~~
 </details> 
 """ 
     return md.strip()
