@@ -17,20 +17,18 @@ def parse_datetime(raw_date):
             print(f"❌ 無法解析日期：{raw_date}")
             return None
 
+import html
 
 def render_collapsible_block(content: str, preview_lines: int = 5, lang: str = "text") -> str:
-    """
-    產生：可折疊區塊 + 前 N 行預覽 + 展開後保留 code block 的 Copy 按鈕
-    GitBook 支援 <details>/<summary>，且 code block 仍會顯示 Copy。
-    """
-    safe = (content or "").strip()
-    lines = safe.splitlines()
+    safe_raw = (content or "").strip()
+    safe = sanitize_code_content(safe_raw)
+    lines = [ln.rstrip() for ln in safe.splitlines()]
 
-    preview = " ／ ".join(
-        line.strip() for line in lines[:preview_lines] if line.strip()
-    )
+    preview = "／".join(ln.strip() for ln in lines[:preview_lines] if ln.strip())
     if len(lines) > preview_lines:
-        preview += "\n…（點擊展開全文）"
+        preview += " …（點擊展開全文）"
+
+    preview = html.escape(preview, quote=False)
 
     md = f"""
 <details>
@@ -44,9 +42,11 @@ def render_collapsible_block(content: str, preview_lines: int = 5, lang: str = "
 ~~~{lang}
 {safe}
 ~~~
-</details> 
-""" 
-    return md.strip()
+
+</details>
+""".strip()
+
+    return md
     
 # 📥 讀取 Google Sheets
 sheet_name = os.environ.get("SHEET_NAME", "審核通過")
