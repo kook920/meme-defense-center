@@ -10,7 +10,7 @@
 
 </summary>
 
-~~~text
+```text
 第11號颱風「楊柳」，8月13日中午先在台東登陸時，威力驚人，最大風力高達14級，狂掃東部沿海。但短短十幾個小時後，「楊柳」登陸中國福建，強度已下降為11級。
 
 問題來了——為什麼災情卻如此慘烈？
@@ -25,7 +25,7 @@
 當颱風來襲，人命只是代價；失控的是制度本身。
 
 https://www.youtube.com/watch?v=u9VA1aEcgq0
-~~~
+```
 
 </details>
 
@@ -41,7 +41,7 @@ https://www.youtube.com/watch?v=u9VA1aEcgq0
 
 </summary>
 
-~~~text
+```text
 🧠 當習近平在閱兵典禮上說出「人類可以活到150歲」這句話，BBC直播的聲音沒剪掉。
 
 在網路瘋傳後，中國官媒急忙出聲：「那是AI合成的假音檔。」
@@ -53,7 +53,7 @@ https://www.youtube.com/watch?v=u9VA1aEcgq0
 但現在——是誰在怕這段話被聽見？
 又是誰想要讓你以為它「是假的」？
 說出口的那一刻，到底是誰不小心鬆了口？
-~~~
+```
 
 </details>
 
@@ -69,7 +69,7 @@ https://www.youtube.com/watch?v=u9VA1aEcgq0
 
 </summary>
 
-~~~text
+```text
 于朦朧慘死內幕頻傳！
 疑似被利用當人頭帳戶洗錢，不願同流合污，把證據USB 吞下肚子，結果被剖肚、丟下樓！
 
@@ -85,7 +85,7 @@ https://www.youtube.com/watch?v=u9VA1aEcgq0
 中國海外秘密警察站 🕵️‍♂️
 
 反正大家不想在真實的社會中關心政治，只愛看電影，就用電影去影響觀眾吧！
-~~~
+```
 
 </details>
 
@@ -101,7 +101,7 @@ https://www.youtube.com/watch?v=u9VA1aEcgq0
 
 </summary>
 
-~~~text
+```text
 【中國軍方前所未有的高層將領大清洗】
 九位高官被免職，其中竟包括被視為 何衛東 和 林向陽 的習近平親信與對台作戰主帥。
 
@@ -110,6 +110,6 @@ https://www.youtube.com/watch?v=u9VA1aEcgq0
 當「自己人」也成了習近平的整肅對象，這場權力遊戲背後究竟藏著什麼風暴？台灣又該怎麼解讀與因應？
 
 完整解析👉 https://www.youtube.com/watch?v=rz7QHMHBsr0
-~~~
+```
 
 </details>

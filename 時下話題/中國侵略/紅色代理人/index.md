@@ -10,7 +10,7 @@
 
 </summary>
 
-~~~text
+```text
 對現在這個台灣不滿意？
 沒關係，還有選項可以選哦～
 
@@ -24,7 +24,7 @@
 以後你結婚、搬家、生小孩，
 也可以享受第一時間送出你資料的快感～
 不用你請，他們自己幫你做好囉！超棒der 🫠✨
-~~~
+```
 
 </details>
 
@@ -40,7 +40,7 @@
 
 </summary>
 
-~~~text
+```text
 📢【北京最新耳語】
 柯文哲夫妻竟捲入中共「一五七專案」？
 支持民主的中國法學家袁紅冰，描述柯文哲夫妻與習近平的關係。
@@ -52,7 +52,7 @@
 
 🎥 內幕影片這裡看：⤵️
 https://www.youtube.com/watch?v=JQKzzGTWLmM
-~~~
+```
 
 </details>
 
@@ -68,7 +68,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 
 </summary>
 
-~~~text
+```text
 去年四月，羅明才赴中，拜會中共統戰高官王滬寧。
 這一年多來，他在立法院推動了兩項重磅修法：
 
@@ -92,7 +92,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 ✦ 「金門居民可自由往來中國」變成常態，「我們早就是一家人」鋪路完畢
 
 到時候，就等中共官媒大書特書：「金馬模式成功，接下來就輪到澎湖、台灣本島了！」
-~~~
+```
 
 </details>
 
@@ -108,7 +108,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 
 </summary>
 
-~~~text
+```text
 🎥 《紅色賣身契》：一條從台灣直通中國警局的祕密管道
 
 你知道嗎？現在在台灣，只要點進一則「免費貸款」的IG廣告，就可能踏上一條無法回頭的路。
@@ -123,7 +123,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 這不是陰謀論，是你我身邊正在發生的事。
 
 https://www.youtube.com/watch?v=RP3U7qcsWys
-~~~
+```
 
 </details>
 
@@ -139,7 +139,7 @@ https://www.youtube.com/watch?v=RP3U7qcsWys
 
 </summary>
 
-~~~text
+```text
 🔴最近一名中國籍女子在全家超商砸酒瓶，竟被起底為中共中紀委的幹部。
 （中紀委是中國共產黨的最高紀律檢查機關）
 這樣的身分，出現在這樣的場景，真的是單純巧合嗎？
@@ -149,7 +149,7 @@ https://www.youtube.com/watch?v=RP3U7qcsWys
 中國對台的介入，真的沒有那麼嚴重嗎？
 我們還要說服自己「不會那麼巧吧」、「別太緊張」到什麼時候？
 我們真的準備好面對這場早已開始的滲透了嗎？
-~~~
+```
 
 </details>
 
@@ -165,7 +165,7 @@ https://www.youtube.com/watch?v=RP3U7qcsWys
 
 </summary>
 
-~~~text
+```text
 【江湖傳言】紅二代、紅三代的神祕「疊字玄機」曝光！
 
 傳說在中共高層圈子裡，有個不成文的起名潛規則：
@@ -191,7 +191,7 @@ https://www.youtube.com/watch?v=RP3U7qcsWys
 還是「疊字只是煙霧彈，實則身處高層圈核心」？
 
 你說巧不巧？
-~~~
+```
 
 </details>
 
@@ -207,7 +207,7 @@ https://www.youtube.com/watch?v=RP3U7qcsWys
 
 </summary>
 
-~~~text
+```text
 台中究竟有多特別呢🤔？
 中國知乎論壇上，有人在教中國人「如何移民台灣」。
 
@@ -220,6 +220,6 @@ https://www.youtube.com/watch?v=RP3U7qcsWys
 撰文的單位是：成都安達弘略商務信息諮詢公司
 
 這樣的文字光明正大出現在網路論壇上，台中市政府是不是該給全民一個交代？
-~~~
+```
 
 </details>

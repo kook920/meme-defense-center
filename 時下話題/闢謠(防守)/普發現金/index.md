@@ -10,7 +10,7 @@
 
 </summary>
 
-~~~text
+```text
 🎯 只有行政機關能發錢！不是誰國會過半就行！
 
 ✔ 美國、韓國、日本、新加坡通通都一樣
@@ -19,7 +19,7 @@
 
 🧃「在野黨說自己能發錢」是在賣芭樂票～
 https://www.youtube.com/shorts/wAeo4nB9eoA
-~~~
+```
 
 </details>
 
@@ -35,7 +35,7 @@ https://www.youtube.com/shorts/wAeo4nB9eoA
 
 </summary>
 
-~~~text
+```text
 哥哥直接從媽媽錢包拿了一萬塊說要請客
 弟弟說拿六千就好，妹妹說不能沒有經過同意就拿錢
 
@@ -49,6 +49,6 @@ https://www.youtube.com/shorts/wAeo4nB9eoA
 
 無論是馬英九到蔡英文都是如此，沒人例外
 只有這屆立法委員【水平差到連這都不清楚】
-~~~
+```
 
 </details>

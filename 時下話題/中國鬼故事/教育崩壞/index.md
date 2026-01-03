@@ -10,7 +10,7 @@
 
 </summary>
 
-~~~text
+```text
 中國真的那麼美好嗎？
 
 🆘👨🏻‍🎓👩🏻‍🎓高等教育崩潰！
@@ -18,6 +18,6 @@
 教育變生意只此一家，花幾十萬畢業送外賣
 
 https://www.youtube.com/watch?v=AX05DK8NIjs
-~~~
+```
 
 </details>

@@ -10,7 +10,7 @@
 
 </summary>
 
-~~~text
+```text
 民進黨執政下，台灣股市創歷史新高
 事實勝於雄辯，這是全球投資人對台灣經濟實力的肯定，也是人民穩健信心的表現。
 台灣擁有強大的經濟競爭力，民進黨持續推動轉型與創新，正是這股力量的引路人👍
@@ -25,7 +25,7 @@
 
 🌱 讓台灣更好、更美、更茁壯！
 🔥 力挽狂瀾，救台灣！💪💪💪💪💪
-~~~
+```
 
 </details>
 
@@ -41,7 +41,7 @@
 
 </summary>
 
-~~~text
+```text
 🇹🇼📉 兩岸越友好，台灣經濟越慘？台股指數告訴你真相！
 
 🔍 從經濟角度看兩岸發展矛盾：
@@ -62,7 +62,7 @@
 
 https://www.youtube.com/shorts/U3563oDaU40
 https://www.youtube.com/shorts/qBB1u_bHKNU
-~~~
+```
 
 </details>
 
@@ -78,7 +78,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 
 </summary>
 
-~~~text
+```text
 💥 臺灣不只有護國神山，更是全球市值前十強的經濟體！
 ❗️臺灣在各國上市企業市值排名全世界第九，貢獻2%全球市值❗️
 
@@ -89,7 +89,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 
 📈 這不只是台積電的成就
 也是無數中小企業、工程師與產業人才的堅實力量。
-~~~
+```
 
 </details>
 
@@ -105,7 +105,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 
 </summary>
 
-~~~text
+```text
 🇹🇼2014拒絕服貿，是台灣逆轉南韓命運的分水嶺⚡️
 
 2014，台灣拒絕《兩岸服貿協議》，擋下中國市場全面滲透。
@@ -117,7 +117,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 
 拒絕服貿，不是恐懼未來，而是替未來留下空間。
 那一場決定，才是我們現在還能掌握自己經濟命脈的關鍵！💪
-~~~
+```
 
 </details>
 
@@ -133,7 +133,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 
 </summary>
 
-~~~text
+```text
 😱非洲豬瘟東亞十國全淪陷，僅剩台灣、日本為非疫區
 
 防範非洲豬瘟病毒具有相當的複雜性與難度，但台灣政府做到了
@@ -145,7 +145,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 4️⃣農委會也與資訊中心合作開發GPS回傳系統
 
 當年口蹄疫耽誤台灣23年，如今官民一心，共同守護產業心血結晶
-~~~
+```
 
 </details>
 
@@ -161,7 +161,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 
 </summary>
 
-~~~text
+```text
 🌟 薪資成長好消息！🌟
 
 🔹2025年1-8月受僱員工經常性薪資平均48,000元，年增3.0%
@@ -178,7 +178,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 
 薪資成長可喜，但產業間景氣差異也值得關注。
 一起努力，讓每個產業都有好日子！
-~~~
+```
 
 </details>
 
@@ -194,7 +194,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 
 </summary>
 
-~~~text
+```text
 📈 薪資成長＋物價穩定＝購買力最強
 
 🔹2025年，全台平均經常性薪資4.8萬元，年增3%
@@ -208,7 +208,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 🔑 穩定控物價、積極拚加薪
 撐住通膨、積極推動薪資調升，
 讓大家努力工作的成果，真正反映在生活裡！
-~~~
+```
 
 </details>
 
@@ -224,7 +224,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 
 </summary>
 
-~~~text
+```text
 🇹🇼【2025出口趨勢】
 美國超越中國，首度成為台灣最大出口市場！
 
@@ -247,7 +247,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 🔹台灣總出口額1-10月已達5144.5億美元，年增31.8%，對美出口更暴衝63.3%，多元化策略見效！
 
 ✅ 數據證實：2025年美國多次超車中國，台灣出口新時代正式展開！
-~~~
+```
 
 </details>
 
@@ -263,7 +263,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 
 </summary>
 
-~~~text
+```text
 台股真的只靠台積電？算給你看
 
 每隔一陣子就有人說「台股都靠台積電撐著」，好，那我們來算算看。台積電佔台股市值算你40%好了，27000點扣掉台積電的影響：27000 × (1-0.4) = 16200點。還是比十幾年前的台股強一倍以上。
@@ -276,7 +276,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 承認台股表現好，很難嗎？
 接下來還要找什麼理由？
 「還不是靠AI」、「還不是靠美國降息」、「大通膨時代誰沒漲」？股市本來就長期向上，台股這幾年就是比過去強，承認這點有這麼困難嗎？
-~~~
+```
 
 </details>
 
@@ -292,7 +292,7 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 
 </summary>
 
-~~~text
+```text
 🚢 美國關稅新進度 2025.12.16
 
 川普今年大動作搞「對等關稅」掀起全球經濟大亂鬥，但最新數據顯示，其實台灣有超過一半的貨品成功避開緊急對等關稅、42%商品獲得豁免關稅！
@@ -312,6 +312,6 @@ https://www.youtube.com/shorts/qBB1u_bHKNU
 🔹台灣被課到新關稅的出口品比例「全主要貿易夥伴中最低」👏
 🔹傳產、中小企業比較有影響，ICT產業主力則還在談判、有得拚！
 🔹整體來說，台灣出口美國的關稅衝擊目前還算可控！
-~~~
+```
 
 </details>

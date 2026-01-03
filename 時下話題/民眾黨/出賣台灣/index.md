@@ -10,7 +10,7 @@
 
 </summary>
 
-~~~text
+```text
 🇨🇳 習近平若被逼急了，會做什麼？
 
 有一種說法：一旦習近平的統治地位遭遇威脅，他可能會鋌而走險，發動對台軍事行動，轉移內部矛盾。
@@ -34,7 +34,7 @@
     🏃‍♂️ 有人被逼離職，有人直接移民
 
 你真的以為，「服從」就能「保住鐵飯碗」嗎？
-~~~
+```
 
 </details>
 
@@ -50,7 +50,7 @@
 
 </summary>
 
-~~~text
+```text
 📢【北京最新耳語】
 柯文哲夫妻竟捲入中共「一五七專案」？
 支持民主的中國法學家袁紅冰，描述柯文哲夫妻與習近平的關係。
@@ -62,7 +62,7 @@
 
 🎥 內幕影片這裡看：⤵️
 https://www.youtube.com/watch?v=JQKzzGTWLmM
-~~~
+```
 
 </details>
 
@@ -78,7 +78,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 
 </summary>
 
-~~~text
+```text
 🇰🇷 韓國人 看出台灣的感性🥹
 🇹🇼 台灣人 看出台灣的矛盾🌀
 
@@ -97,7 +97,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 
 你還知道什麼 台灣矛盾 呢？
 💬 歡迎補充！
-~~~
+```
 
 </details>
 
@@ -113,7 +113,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 
 </summary>
 
-~~~text
+```text
 中國黑龍江一場企業徵才活動，原本要招9000人，結果湧入11萬人應徵，畫面震撼。📉
 
 薪資行情讓人難以置信：
@@ -135,7 +135,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 我們不歧視移民，而是必須問清楚：誰來承擔後果？如何把關？
 
 🛑 台灣人，不能再裝睡了。
-~~~
+```
 
 </details>
 
@@ -151,7 +151,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 
 </summary>
 
-~~~text
+```text
 【他們】說「要查清楚賴清德兒子」
 但事實是...賴清德的兒子：
 👉 沒外國國籍
@@ -172,7 +172,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 🤔 真想問：
 到底誰才是「不愛台灣」的人？
 網軍亂帶風向，你還要幫他們轉傳嗎？
-~~~
+```
 
 </details>
 
@@ -188,7 +188,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 
 </summary>
 
-~~~text
+```text
 🔍【他們說愛台灣，身體卻很誠實】
 
 蔣萬安：兒子是美國人
@@ -215,7 +215,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 📌 支持國民黨、民眾黨的朋友們
 你們真的願意把未來交給一群
 隨時準備好逃離台灣的人嗎？
-~~~
+```
 
 </details>
 
@@ -231,7 +231,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 
 </summary>
 
-~~~text
+```text
 黃國昌還想切割馬治薇？
 民眾黨 近期醜聞連環爆，不只黨主席 黃國昌 深陷狗仔、駭客爭議，慘遭眾多受害者提告，前黨工、前發言人 馬治薇 更因參選立委時收受中國資金105萬元還回傳政府情資，違反《反滲透法》，二審被法院判刑2年8個月。
 
@@ -241,7 +241,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 ❗️馬治薇曾以 小草傳媒 名義在立法院大方開直播。
 
 2024年9月，已經官司纏身、一審被判有罪的馬治薇，以小草傳媒名義闖入立法院議場開直播，引起各方批評後，黃國昌迅速切割，直說：「我不認識這個人」、「小草傳媒負責人是誰？跟民眾黨有關係嗎？」
-~~~
+```
 
 </details>
 
@@ -257,7 +257,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 
 </summary>
 
-~~~text
+```text
 誰做的事，就要大聲說出來！
 
 台中爆出【非洲豬瘟陽性🐷】
@@ -271,7 +271,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 
 一句「要合作」就想洗白？
 宣導經費被誰砍的，人民記得很清楚
-~~~
+```
 
 </details>
 
@@ -287,7 +287,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 
 </summary>
 
-~~~text
+```text
 對抗非洲豬瘟的預算遠遠不止宣導經費！
 
 經過立法院審議後的法定預算，防檢局「防範非洲豬瘟邊境管制及國內防疫整備計畫」一共被砍了 6 千萬元，其中包含：
@@ -302,7 +302,7 @@ https://www.youtube.com/watch?v=JQKzzGTWLmM
 
 看報導全文》
 https://waa.tw/ebBz35
-~~~
+```
 
 </details>
 
@@ -318,7 +318,7 @@ https://waa.tw/ebBz35
 
 </summary>
 
-~~~text
+```text
 每次有人問「你以為民進黨就不會賣台嗎？」
 
 我都懶得反駁，直接承認：沒錯！
@@ -329,7 +329,7 @@ https://waa.tw/ebBz35
 講白一點，不管哪個黨的人，只要敢動歪腦筋，一個都不能放過！
 我們現在就要打電話、寫信、洗爆選區立委的服務處，給我把國安法案過下去！
 誰敢擋？就讓他們自己背上「包庇民進黨賣台」的臭名，直接送他們回家！
-~~~
+```
 
 </details>
 
@@ -345,7 +345,7 @@ https://waa.tw/ebBz35
 
 </summary>
 
-~~~text
+```text
 都已經115年了，115年度的中央政府總預算案現在還卡在立法院程序委員會
 還沒交付各委員會，代表「連審都沒得審」
 
@@ -377,6 +377,6 @@ TPASS行政院通勤月票 75億元
 
 教訓民進黨？
 我看是教訓自己吧
-~~~
+```
 
 </details>

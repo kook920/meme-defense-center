@@ -10,7 +10,7 @@
 
 </summary>
 
-~~~text
+```text
 【7/26罷免未成，國際怎麼看台灣？】
 
 這幾個月，現任國民黨立委在任期內頻繁與中共接觸，
@@ -31,7 +31,7 @@
 
 國際不會去分辨親共的人是傅崑萁、羅明才
 但對國家不忠誠的他們，卻代表了整個台灣
-~~~
+```
 
 </details>
 
@@ -47,14 +47,14 @@
 
 </summary>
 
-~~~text
+```text
 你知道豆腐渣工程嗎？
 就算沒看過，那你知道2025緬甸大地震
 距離震央一千多公里遠的曼谷大樓竟然倒塌，承包商就是由泰國和中國合資
 
 然而台灣正有一群人支持著離島建設條例，希望由中國來建設引進中資企業來離島。
 台灣建築界已經有享譽國際的建設案，為何還要引進中資？
-~~~
+```
 
 </details>
 
@@ -70,7 +70,7 @@
 
 </summary>
 
-~~~text
+```text
 🇨🇳 習近平若被逼急了，會做什麼？
 
 有一種說法：一旦習近平的統治地位遭遇威脅，他可能會鋌而走險，發動對台軍事行動，轉移內部矛盾。
@@ -94,7 +94,7 @@
     🏃‍♂️ 有人被逼離職，有人直接移民
 
 你真的以為，「服從」就能「保住鐵飯碗」嗎？
-~~~
+```
 
 </details>
 
@@ -110,7 +110,7 @@
 
 </summary>
 
-~~~text
+```text
 對現在這個台灣不滿意？
 沒關係，還有選項可以選哦～
 
@@ -124,7 +124,7 @@
 以後你結婚、搬家、生小孩，
 也可以享受第一時間送出你資料的快感～
 不用你請，他們自己幫你做好囉！超棒der 🫠✨
-~~~
+```
 
 </details>
 
@@ -140,7 +140,7 @@
 
 </summary>
 
-~~~text
+```text
 我們不要和平協議
 因為我們不想再被說謊慣犯(中共)騙了。
 
@@ -156,7 +156,7 @@
 讓想簽協議的人知道——台灣不會再信了！
 
 https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
-~~~
+```
 
 </details>
 
@@ -172,14 +172,14 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 </summary>
 
-~~~text
+```text
 國民黨立委 強推中配入籍6改4，讓中配依親家人吃垮台灣人血汗錢繳交的健保。
 
 ❌ 話術：中配6改4一年只有60個依親名額不會影響健保。
 
 ✅ 真相：依親「定居」才有60個名額限制，依親「居留」的中配家人只要滿半年就可用健保，無限多人。
 無限制！！
-~~~
+```
 
 </details>
 
@@ -195,7 +195,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 </summary>
 
-~~~text
+```text
 🧨健保破口就在這！
 國民黨立委強推《中配6改4》法案，讓中國配偶的親人能輕鬆入籍、享健保，
 恐讓台灣人用 血汗錢 供養無上限的健保人口！💸
@@ -210,7 +210,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 台灣健保，還撐得住嗎？
 
 🛑別再自欺欺人了，這不是照顧人權，是對台灣醫療資源的掏空！
-~~~
+```
 
 </details>
 
@@ -226,7 +226,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 </summary>
 
-~~~text
+```text
 🇰🇷 韓國人 看出台灣的感性🥹
 🇹🇼 台灣人 看出台灣的矛盾🌀
 
@@ -245,7 +245,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 你還知道什麼 台灣矛盾 呢？
 💬 歡迎補充！
-~~~
+```
 
 </details>
 
@@ -261,7 +261,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 </summary>
 
-~~~text
+```text
 【江湖傳言】紅二代、紅三代的神祕「疊字玄機」曝光！
 
 傳說在中共高層圈子裡，有個不成文的起名潛規則：
@@ -287,7 +287,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 還是「疊字只是煙霧彈，實則身處高層圈核心」？
 
 你說巧不巧？
-~~~
+```
 
 </details>
 
@@ -303,7 +303,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 </summary>
 
-~~~text
+```text
 中國黑龍江一場企業徵才活動，原本要招9000人，結果湧入11萬人應徵，畫面震撼。📉
 
 薪資行情讓人難以置信：
@@ -325,7 +325,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 我們不歧視移民，而是必須問清楚：誰來承擔後果？如何把關？
 
 🛑 台灣人，不能再裝睡了。
-~~~
+```
 
 </details>
 
@@ -341,7 +341,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 </summary>
 
-~~~text
+```text
 【他們】說「要查清楚賴清德兒子」
 但事實是...賴清德的兒子：
 👉 沒外國國籍
@@ -362,7 +362,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 🤔 真想問：
 到底誰才是「不愛台灣」的人？
 網軍亂帶風向，你還要幫他們轉傳嗎？
-~~~
+```
 
 </details>
 
@@ -378,7 +378,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 </summary>
 
-~~~text
+```text
 🔍【他們說愛台灣，身體卻很誠實】
 
 蔣萬安：兒子是美國人
@@ -405,7 +405,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 📌 支持國民黨、民眾黨的朋友們
 你們真的願意把未來交給一群
 隨時準備好逃離台灣的人嗎？
-~~~
+```
 
 </details>
 
@@ -421,7 +421,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 </summary>
 
-~~~text
+```text
 【雙城論壇險釀國家機密外流】
 
 從未停辦過的雙城論壇，在舉辦前幾天突然喊停，因為北京喊暫緩。
@@ -439,7 +439,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 🧨 台灣差點在你沒注意的時候，被台北市政府用MOU賣掉一角。
 請把這篇傳出去。2026年，再亂投一次的代價，可能是不可逆的結局。
-~~~
+```
 
 </details>
 
@@ -455,7 +455,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 </summary>
 
-~~~text
+```text
 誰做的事，就要大聲說出來！
 
 台中爆出【非洲豬瘟陽性🐷】
@@ -469,7 +469,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 一句「要合作」就想洗白？
 宣導經費被誰砍的，人民記得很清楚
-~~~
+```
 
 </details>
 
@@ -485,7 +485,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 </summary>
 
-~~~text
+```text
 台中究竟有多特別呢🤔？
 中國知乎論壇上，有人在教中國人「如何移民台灣」。
 
@@ -498,7 +498,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 撰文的單位是：成都安達弘略商務信息諮詢公司
 
 這樣的文字光明正大出現在網路論壇上，台中市政府是不是該給全民一個交代？
-~~~
+```
 
 </details>
 
@@ -514,7 +514,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 </summary>
 
-~~~text
+```text
 國民黨：新的會期會民生法案優先！
 結果優先的是：
 1️⃣不在籍投票
@@ -522,7 +522,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 3️⃣中配直系血親依親用健保檢察官不得抗告
 諸如此類......
 國民黨的「民生法案」跟我們正常人的不一樣！
-~~~
+```
 
 </details>
 
@@ -538,7 +538,7 @@ https://youtube.com/shorts/rwo5QgIVWgM?si=sssCBsoax1mVAjel
 
 </summary>
 
-~~~text
+```text
 🟩民進黨（光是11月7日~11月14日一個禮拜）：
 蔡英文：去德國參加柏林自由會議
 蕭美琴：去歐洲議會參加IPAC 會議
@@ -570,7 +570,7 @@ Puma：去德國參加聽證會並發表演說
 林倩綺：去中國會見統戰頭子王滬寧
 
 水準天差地遠 這樣有什麼好難投票的？
-~~~
+```
 
 </details>
 
@@ -586,7 +586,7 @@ Puma：去德國參加聽證會並發表演說
 
 </summary>
 
-~~~text
+```text
 📊 各地中配入籍難度比一比
 
 🇲🇴 澳門：入籍慢慢來
@@ -603,7 +603,7 @@ Puma：去德國參加聽證會並發表演說
 
 🧐 小結
 其他地方對中配的限制多、年限久、福利慢慢給，台灣這一波修法卻是一路綠燈直接開到底，台灣人當然有疑慮！
-~~~
+```
 
 </details>
 
@@ -619,7 +619,7 @@ Puma：去德國參加聽證會並發表演說
 
 </summary>
 
-~~~text
+```text
 你知道最近韓國酷澎個資大地雷嗎？
 中國籍員工把3000萬筆韓國人的個資全部A走，姓名、電話、住址、生日、性別，什麼都有，然後人已經跑回中國去了，韓國人現在炸鍋。
 
@@ -627,7 +627,7 @@ Puma：去德國參加聽證會並發表演說
 
 所以現在國民黨推的新國籍法是什麼意思？
 中國配偶【不用放棄中國國籍也能當公職】，直接接觸台灣政府各種資料，台灣人的個資跟國安是不是就直接裸奔了？
-~~~
+```
 
 </details>
 
@@ -643,7 +643,7 @@ Puma：去德國參加聽證會並發表演說
 
 </summary>
 
-~~~text
+```text
 每次有人問「你以為民進黨就不會賣台嗎？」
 
 我都懶得反駁，直接承認：沒錯！
@@ -654,7 +654,7 @@ Puma：去德國參加聽證會並發表演說
 講白一點，不管哪個黨的人，只要敢動歪腦筋，一個都不能放過！
 我們現在就要打電話、寫信、洗爆選區立委的服務處，給我把國安法案過下去！
 誰敢擋？就讓他們自己背上「包庇民進黨賣台」的臭名，直接送他們回家！
-~~~
+```
 
 </details>
 
@@ -670,7 +670,7 @@ Puma：去德國參加聽證會並發表演說
 
 </summary>
 
-~~~text
+```text
 ⚠️ 有人說：反正2027要被統一了，買武器來得及嗎？
 
 等等，你被帶風向了！
@@ -702,7 +702,7 @@ Puma：去德國參加聽證會並發表演說
 
 他們不是覺得「來不及」
 他們是「根本不想防」
-~~~
+```
 
 </details>
 
@@ -718,7 +718,7 @@ Puma：去德國參加聽證會並發表演說
 
 </summary>
 
-~~~text
+```text
 🏮 國民黨：過度親中一波接一波
 
 🧳 2024/4/26、6月、2025/2｜傅崐萁三度訪中
@@ -740,7 +740,7 @@ Puma：去德國參加聽證會並發表演說
 🔻 藍白刪減、凍結近千億國防預算，稱「刪不必要支出」。
 🔻 在兩岸緊張時刻，此舉被視為對外釋放錯誤訊號。
 🔻 搭配離島自貿區政策，讓人憂心台灣防線被系統性拆解。
-~~~
+```
 
 </details>
 
@@ -756,7 +756,7 @@ Puma：去德國參加聽證會並發表演說
 
 </summary>
 
-~~~text
+```text
 🛫 國民黨立委：不審預算，也要去中國參加活動！
 
 就在台灣社會發生恐怖攻擊事件時，國民黨立委翁曉玲帶頭（及葉元之、林思銘、鄭正鈐、呂玉玲、邱若華、涂權吉等7位）自費去中國廈門參加台商協會33週年慶。
@@ -776,6 +776,6 @@ Puma：去德國參加聽證會並發表演說
 所謂「台商協會」根本和「廈門四辦」互為表裡，透過商業名義降低戒心，實際執行更深層的統戰與情報工作。翁曉玲這不是參訪，是跟中共統戰勾勾纏！國民黨還想裝無辜喊「被抹紅」，只能說是此地無銀三百兩、吃相難看。
 
 誰護台？誰賣台？一清二楚！
-~~~
+```
 
 </details>

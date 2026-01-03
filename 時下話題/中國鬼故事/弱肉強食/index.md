@@ -10,7 +10,7 @@
 
 </summary>
 
-~~~text
+```text
 「還孩子真相！」「嚴懲兇手！」
 四川江油，原本寧靜的小城，人群湧上街頭、集聚在市政府前——成百上千人站在一起，對官員的怒火像浪潮一波波湧來。
 
@@ -21,7 +21,7 @@
 這不是單純的校園霸凌事件，它喚起的是中國人對『法治信心』崩裂時的集體呼喊——江油不再只是地圖上的名字，而是沉痛的回聲。
 
 https://www.youtube.com/watch?v=ZwryCQrBolo
-~~~
+```
 
 </details>
 
@@ -37,7 +37,7 @@ https://www.youtube.com/watch?v=ZwryCQrBolo
 
 </summary>
 
-~~~text
+```text
 前中國軍醫鄭治坦承，自己曾親身被迫參與活摘器官，揭開軍醫院長期被掩蓋的黑暗角落。
 
 鄭治回憶，實習時他接到一項「軍事任務」，在毫無麻醉的情況下，從一名未成年士兵身上摘取腎臟與眼球——那一刻成為他一輩子揮不掉的陰影。
@@ -48,7 +48,7 @@ https://www.youtube.com/watch?v=ZwryCQrBolo
 
 🔪👁️國有器官：
 https://www.youtube.com/watch?v=Xq1IDnNGeRM
-~~~
+```
 
 </details>
 
@@ -64,7 +64,7 @@ https://www.youtube.com/watch?v=Xq1IDnNGeRM
 
 </summary>
 
-~~~text
+```text
 直擊！中國器官移植制度背後的層層疑雲
 
 除了醫院內「活摘器官」和黑市買賣的傳聞，實習醫生羅帥雨墜樓案更為質疑添上一層陰影——他的家屬懷疑，羅帥雨可能因為揭發醫院黑幕而遭到滅口。
@@ -73,7 +73,7 @@ https://www.youtube.com/watch?v=Xq1IDnNGeRM
 
 當數據不透明、質疑無法釐清，官方說法與真相之間的距離，究竟還有多遠？
 https://www.youtube.com/watch?v=AQBpAEeNEXY
-~~~
+```
 
 </details>
 
@@ -89,7 +89,7 @@ https://www.youtube.com/watch?v=AQBpAEeNEXY
 
 </summary>
 
-~~~text
+```text
 一年前，羅帥雨醫師墜樓案震驚中國。
 身為實習醫師的他離奇身亡，雖然官方定調為自殺，家屬卻堅持現場充滿疑點。
 
@@ -100,7 +100,7 @@ https://www.youtube.com/watch?v=AQBpAEeNEXY
 當病患被當作「行走的器官」，你還敢相信醫院只是救命的地方嗎？
 
 詳細內幕：https://www.youtube.com/watch?v=FmOs4nIB2I4
-~~~
+```
 
 </details>
 
@@ -116,7 +116,7 @@ https://www.youtube.com/watch?v=AQBpAEeNEXY
 
 </summary>
 
-~~~text
+```text
 「于朦朧事件」背後的爭議與紅三代勢力
 
 主嫌范世錡的演唱會臨時取消，被外界質疑是做賊心虛，更有聲紋比對指出他與案發現場聲音極為相似，儘管本人公開否認，疑雲卻揮之不去。
@@ -126,6 +126,6 @@ https://www.youtube.com/watch?v=AQBpAEeNEXY
 最後，鏡頭轉向另一紅三代楊蘭蘭在澳洲過著奢華生活。為了保護權貴家族，中共竟疑似出手威脅澳洲，停止採購鐵礦石。這些片段，無不突顯紅三代在中國社會裡的特權與影響力——真相會不會被掩埋，成了更令人關注的謎題。
 
 深入剖析🔎https://www.youtube.com/watch?v=gOfn5rjj9lg
-~~~
+```
 
 </details>

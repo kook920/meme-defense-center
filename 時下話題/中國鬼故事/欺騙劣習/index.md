@@ -10,7 +10,7 @@
 
 </summary>
 
-~~~text
+```text
 近期，墨西哥最大港口──曼薩尼約港，出現了令人震驚的場景：
 短短一個月，就有 900 個中國貨櫃被拋棄！
 數量比去年激增三倍，現場堆積如山、令人咋舌。
@@ -31,7 +31,7 @@
 這場貨櫃棄屍潮，背後寫著四個大字：「不合規定」。
 
 https://www.youtube.com/watch?v=qunYDoOm8ZQ
-~~~
+```
 
 </details>
 
@@ -47,7 +47,7 @@ https://www.youtube.com/watch?v=qunYDoOm8ZQ
 
 </summary>
 
-~~~text
+```text
 《擺攤爆富騙局》
 
 你有沒有刷到過這種影片？
@@ -66,7 +66,7 @@ https://www.youtube.com/watch?v=qunYDoOm8ZQ
 https://www.youtube.com/watch?v=uvim-eRsxcQ
 
 當你按下聯絡報名的那一刻，他們的收入才真正開始。
-~~~
+```
 
 </details>
 
@@ -82,13 +82,13 @@ https://www.youtube.com/watch?v=uvim-eRsxcQ
 
 </summary>
 
-~~~text
+```text
 🏗️中國最會蓋橋？
 當然，包括蓋到一半直接整段掉進黃河的橋。
 還記得泰國地震中，瞬間崩解的大樓嗎？
 施工單位：又是它。
 https://www.youtube.com/watch?v=QLiZlP78-5c
-~~~
+```
 
 </details>
 
@@ -104,7 +104,7 @@ https://www.youtube.com/watch?v=QLiZlP78-5c
 
 </summary>
 
-~~~text
+```text
 如果有人跟你說：
 「欸欸～在中國買麝香葡萄超便宜耶🍇！」
 這句話沒錯，真的比較便宜。
@@ -118,7 +118,7 @@ https://www.youtube.com/watch?v=QLiZlP78-5c
 
 你喜歡吃，盡量吃，吃好吃滿我都不攔你。
 但吃到最後⋯⋯說不定你的器官連中國人都嫌不夠乾淨，不收。
-~~~
+```
 
 </details>
 
@@ -134,7 +134,7 @@ https://www.youtube.com/watch?v=QLiZlP78-5c
 
 </summary>
 
-~~~text
+```text
 中國號稱「基建狂魔」，但這支影片揭穿了背後驚人的爛工程真相。
 
 錄音中傳來壓不住的憤怒與無力——那些自稱70年產權的房子，真的能撐幾年嗎？高樓住宅裡，搖搖欲墜的水管、歪斜的樓體、像麵條一樣軟的鋼筋，甚至連混凝土都敢摻垃圾。
@@ -143,7 +143,7 @@ https://www.youtube.com/watch?v=QLiZlP78-5c
 
 當「萬象皆假」成為日常，連自己的房子都不能相信，誰還敢談安心過日子？
 🏚️破房真相：https://www.youtube.com/watch?v=62kfpyXIzpk
-~~~
+```
 
 </details>
 
@@ -159,7 +159,7 @@ https://www.youtube.com/watch?v=QLiZlP78-5c
 
 </summary>
 
-~~~text
+```text
 「胖貓事件」延燒炸鍋——
 大量餐飲店作假，用空包裝外送、用水冒充飲料；外國品牌在中國反而維持高品質，形成鮮明對比。當茶百道等企業以捐款求滅火，網友的反彈卻炸鍋：女性留言諷刺胖貓、護航他女友、反對財物被榨，暴露出中國社會中父權＋女權極端化的裂痕。
 
@@ -168,6 +168,6 @@ https://www.youtube.com/watch?v=QLiZlP78-5c
 當「反日愛國」變口號，而身體卻悄悄走向日本，他們到底在想什麼？
 
 ₍^. .^₎⟆：https://www.youtube.com/watch?v=7leY-WDnkRI
-~~~
+```
 
 </details>
