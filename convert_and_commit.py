@@ -1,3 +1,4 @@
+CODE_FENCE = "```"
 import pandas as pd
 import os
 import urllib.parse
@@ -69,53 +70,33 @@ def seems_risky_for_details(content: str) -> bool:
 
 def render_block(content: str, title: str, preview_text: str, lang: str = "text") -> str:
     safe = (content or "").strip()
+    fence = CODE_FENCE
 
-    # 降級：不包 details，避免 GitBook 500
+    # 🚑 降級模式：不包 <details>
     if seems_risky_for_details(safe):
-        return f"""## {title}
-
-```{}
-```""".strip()
+        return (
+            f"## {title}\n\n"
+            f"{fence}{lang}\n"
+            f"{safe}\n"
+            f"{fence}"
+        )
 
     preview = html.escape(preview_text, quote=False)
 
-    return f"""## {title}
-
-<details>
-<summary>
-
-📄 預覽（約 120 字）：<br>
-{preview}
-
-</summary>
-
-```{lang}
-{safe}```
-</details>""".strip()
-
-    preview = make_preview_by_chars(safe, max_chars=120)
-    preview = html.escape(preview, quote=False)
-
-    return f"""## {title}
-
-<details>
-<summary>
-
-📄 預覽（約 120 字）：<br>
-{preview}
-
-</summary>
-
-```{lang}
-{safe}
-```
-
-</details>""".strip()
-
+    return (
+        f"## {title}\n\n"
+        "<details>\n"
+        "<summary>\n\n"
+        "📄 預覽（約 120 字）：<br>\n"
+        f"{preview}\n\n"
+        "</summary>\n\n"
+        f"{fence}{lang}\n"
+        f"{safe}\n"
+        f"{fence}\n\n"
+        "</details>"
+    )
 
     return md
-
-
     
 # 📥 讀取 Google Sheets
 sheet_name = os.environ.get("SHEET_NAME", "審核通過")
