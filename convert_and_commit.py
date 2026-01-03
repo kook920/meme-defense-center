@@ -1,4 +1,3 @@
-CODE_FENCE = "```"
 import pandas as pd
 import os
 import urllib.parse
@@ -6,8 +5,6 @@ import csv
 import shutil
 from dateutil import parser
 from datetime import datetime
-import re
-import html
 
 
 def parse_datetime(raw_date):
@@ -20,83 +17,72 @@ def parse_datetime(raw_date):
             print(f"❌ 無法解析日期：{raw_date}")
             return None
 
-
-def normalize_preview_text(s: str) -> str:
-    """
-    將 Preview 變成 GitBook 最安全的純文字：
-    - 壓掉換行/多空白
-    - 避免 summary 內出現疑似 HTML
-    """
-    s = (s or "").strip()
-    s = re.sub(r"\s+", " ", s)
-    s = s.replace("<", "‹").replace(">", "›")
-    return s
+import html
 
 
-def get_preview_from_row(row, fallback_text: str = "", max_chars: int = 120) -> str:
-    """
-    1) 優先用 Google Sheets 的 Preview 欄位
-    2) 若 Preview 為空，才用 fallback_text 截字（保命用）
-    """
-    preview = str(row.get("Preview", "")).strip()
-    if not preview:
-        fallback = " ".join((fallback_text or "").split())
-        preview = fallback[:max_chars] + ("…" if len(fallback) > max_chars else "")
-    return normalize_preview_text(preview)
+def make_preview_by_chars(text: str, max_chars: int = 120) -> str:
+    s = " ".join((text or "").split())
+    return s[:max_chars] + ("…" if len(s) > max_chars else "")
 
 
 def seems_risky_for_details(content: str) -> bool:
     c = content or ""
 
-    # 內容本身含 HTML tag / details tag → 不包 details
+    # 1️⃣ 內容本身含 HTML 標籤 → 不包 details
     for tag in ["<details", "</details", "<summary", "</summary", "<div", "</div", "<span", "</span"]:
         if tag in c:
             return True
 
-    # 內容含 fence（避免巢狀 fence）
-    if "```" in c or "~~~" in c:
+    # 2️⃣ 使用 ~~~ fence（GitBook 高風險）
+    if "~~~" in c:
         return True
 
-    # 超長單行保險
+    # 3️⃣ 單一 code block 很長（就算每行不長）
+    if len(c) > 1200:
+        return True
+
+    # 4️⃣ 超長單行（保險）
     if any(len(line) > 800 for line in c.splitlines()):
-        return True
-
-    # 可選：整段太長也降級（先保守一點）
-    if len(c) > 2000:
         return True
 
     return False
 
 
-def render_block(content: str, title: str, preview_text: str, lang: str = "text") -> str:
+
+def render_block(content: str, title: str, lang: str = "text") -> str:
     safe = (content or "").strip()
-    fence = CODE_FENCE
 
-    # 🚑 降級模式：不包 <details>
     if seems_risky_for_details(safe):
-        return (
-            f"## {title}\n\n"
-            f"{fence}{lang}\n"
-            f"{safe}\n"
-            f"{fence}"
-        )
+        # 🚑 降級模式：不包 <details>，避免 GitBook 500
+        return f"""## {title}
 
-    preview = html.escape(preview_text, quote=False)
+```{lang}
+{safe}
+```""".strip()
 
-    return (
-        f"## {title}\n\n"
-        "<details>\n"
-        "<summary>\n\n"
-        "📄 預覽（約 120 字）：<br>\n"
-        f"{preview}\n\n"
-        "</summary>\n\n"
-        f"{fence}{lang}\n"
-        f"{safe}\n"
-        f"{fence}\n\n"
-        "</details>"
-    )
+    preview = make_preview_by_chars(safe, max_chars=120)
+    preview = html.escape(preview, quote=False)
+
+    return f"""## {title}
+
+<details>
+<summary>
+
+📄 預覽（約 120 字）：<br>
+{preview}
+
+</summary>
+
+```{lang}
+{safe}
+```
+
+</details>""".strip()
+
 
     return md
+
+
     
 # 📥 讀取 Google Sheets
 sheet_name = os.environ.get("SHEET_NAME", "審核通過")
@@ -125,34 +111,16 @@ for (zone_raw, theme, topic), group in df.groupby(["Zone", "Theme", "Topic"]):
     folder_path = os.path.join(temp_root, zone, theme, topic)
     os.makedirs(folder_path, exist_ok=True)
 
-md_lines = []
-for _, row in group.iterrows():
-    raw_date = str(row.get("Date", "")).strip()
-    content = str(row.get("Markdown", "")).strip()
-    tags = str(row.get("Tag", "")).strip()
+    md_lines = []
+    for _, row in group.iterrows():
+        raw_date = str(row["Date"]).strip()
+        content = str(row["Markdown"]).strip()
+        tags = str(row["Tag"]).strip()
 
-    date_obj = parse_datetime(raw_date)
-    display_date = (
-        date_obj.strftime("%Y/%m/%d %H:%M")
-        if date_obj
-        else (raw_date or "未提供日期")
-    )
-    section_title = tags or display_date
-
-    preview_text = get_preview_from_row(
-        row,
-        fallback_text=content,
-        max_chars=120
-    )
-
-    md_lines.append(
-        render_block(
-            content=content,
-            title=section_title,
-            preview_text=preview_text,
-            lang="text"
-        )
-    )
+        date_obj = parse_datetime(raw_date)
+        display_date = date_obj.strftime("%Y/%m/%d %H:%M") if date_obj else raw_date or "未提供日期"
+        section_title = tags or display_date
+        md_lines.append(render_block(content, section_title, lang="text"))
 
 
     with open(os.path.join(folder_path, "index.md"), "w", encoding="utf-8") as f:
