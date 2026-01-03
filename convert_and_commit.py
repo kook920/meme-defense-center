@@ -30,22 +30,18 @@ def sanitize_code_content(s: str) -> str:
     s = s.replace("~~~", "~~\u200b~")
     return s
 
-def render_collapsible_block(content: str, preview_lines: int = 5, lang: str = "text") -> str:
+def render_collapsible_block(content: str, preview_chars: int = 120, lang: str = "text") -> str:
     safe_raw = (content or "").strip()
     safe = sanitize_code_content(safe_raw)
-    lines = [ln.rstrip() for ln in safe.splitlines()]
 
-    preview = "／".join(ln.strip() for ln in lines[:preview_lines] if ln.strip())
-    if len(lines) > preview_lines:
-        preview += " …（點擊展開全文）"
-
+    preview = make_preview_by_chars(safe, max_chars=preview_chars)
     preview = html.escape(preview, quote=False)
 
     md = f"""
 <details>
 <summary>
 
-📄 預覽（前 {preview_lines} 行）：<br>
+📄 預覽（約 {preview_chars} 字）：<br>
 {preview}
 
 </summary>
@@ -58,6 +54,7 @@ def render_collapsible_block(content: str, preview_lines: int = 5, lang: str = "
 """.strip()
 
     return md
+
     
 # 📥 讀取 Google Sheets
 sheet_name = os.environ.get("SHEET_NAME", "審核通過")
@@ -95,7 +92,7 @@ for (zone_raw, theme, topic), group in df.groupby(["Zone", "Theme", "Topic"]):
         date_obj = parse_datetime(raw_date)
         display_date = date_obj.strftime("%Y/%m/%d %H:%M") if date_obj else raw_date or "未提供日期"
         section_title = tags or display_date
-        wrapped_content = render_collapsible_block(content, preview_lines=5, lang="text")
+        wrapped_content = render_collapsible_block(content, preview_chars=120, lang="text")
         md_lines.append(f"## {section_title}\n\n{wrapped_content}")
 
     with open(os.path.join(folder_path, "index.md"), "w", encoding="utf-8") as f:
