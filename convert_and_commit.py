@@ -125,25 +125,34 @@ for (zone_raw, theme, topic), group in df.groupby(["Zone", "Theme", "Topic"]):
     folder_path = os.path.join(temp_root, zone, theme, topic)
     os.makedirs(folder_path, exist_ok=True)
 
-    md_lines = []
-    for _, row in group.iterrows():
-        raw_date = str(row["Date"]).strip()
-        content = str(row["Markdown"]).strip()
-preview_text = get_preview_from_row(row, fallback_text=content, max_chars=120)
+md_lines = []
+for _, row in group.iterrows():
+    raw_date = str(row.get("Date", "")).strip()
+    content = str(row.get("Markdown", "")).strip()
+    tags = str(row.get("Tag", "")).strip()
 
-wrapped_content = render_block(
-    content=content,
-    title=section_title,
-    preview_text=preview_text,
-    lang="text"
-)
-        tags = str(row["Tag"]).strip()
+    date_obj = parse_datetime(raw_date)
+    display_date = (
+        date_obj.strftime("%Y/%m/%d %H:%M")
+        if date_obj
+        else (raw_date or "未提供日期")
+    )
+    section_title = tags or display_date
 
-        date_obj = parse_datetime(raw_date)
-        display_date = date_obj.strftime("%Y/%m/%d %H:%M") if date_obj else raw_date or "未提供日期"
-        section_title = tags or display_date
-        preview_text = get_preview_from_row(row, fallback_text=content, max_chars=120)
-        md_lines.append(render_block(content, section_title, preview_text, lang="text"))
+    preview_text = get_preview_from_row(
+        row,
+        fallback_text=content,
+        max_chars=120
+    )
+
+    md_lines.append(
+        render_block(
+            content=content,
+            title=section_title,
+            preview_text=preview_text,
+            lang="text"
+        )
+    )
 
 
     with open(os.path.join(folder_path, "index.md"), "w", encoding="utf-8") as f:
