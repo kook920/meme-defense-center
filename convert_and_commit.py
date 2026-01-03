@@ -19,29 +19,43 @@ def parse_datetime(raw_date):
 
 import html
 
+
 def make_preview_by_chars(text: str, max_chars: int = 120) -> str:
-    s = " ".join((text or "").split())  # 把所有換行壓成空白
+    s = " ".join((text or "").split())
     return s[:max_chars] + ("…" if len(s) > max_chars else "")
 
-def sanitize_code_content(s: str) -> str:
-    if not s:
-        return ""
-    s = s.replace("```", "``\u200b`")
-    s = s.replace("~~~", "~~\u200b~")
-    return s
 
-def render_collapsible_block(content: str, preview_chars: int = 120, lang: str = "text") -> str:
-    safe_raw = (content or "").strip()
-    safe = sanitize_code_content(safe_raw)
+def seems_risky_for_details(content: str) -> bool:
+    c = content or ""
+    if "<details" in c or "</details" in c or "<summary" in c or "</summary" in c:
+        return True
+    if "<div" in c or "</div" in c or "<span" in c or "</span" in c:
+        return True
+    if any(len(line) > 800 for line in c.splitlines()):
+        return True
+    return False
 
-    preview = make_preview_by_chars(safe, max_chars=preview_chars)
+
+def render_block(content: str, title: str, lang: str = "text") -> str:
+    safe = (content or "").strip()
+
+    if seems_risky_for_details(safe):
+        # 🚑 降級模式：不包 <details>，避免 GitBook 500
+        return f"""## {title}
+
+~~~{lang}
+{safe}
+~~~""".strip()
+
+    preview = make_preview_by_chars(safe, max_chars=120)
     preview = html.escape(preview, quote=False)
 
-    md = f"""
+    return f"""## {title}
+
 <details>
 <summary>
 
-📄 預覽（約 {preview_chars} 字）：<br>
+📄 預覽（約 120 字）：<br>
 {preview}
 
 </summary>
@@ -50,8 +64,8 @@ def render_collapsible_block(content: str, preview_chars: int = 120, lang: str =
 {safe}
 ~~~
 
-</details>
-""".strip()
+</details>""".strip()
+
 
     return md
 
@@ -93,8 +107,8 @@ for (zone_raw, theme, topic), group in df.groupby(["Zone", "Theme", "Topic"]):
         date_obj = parse_datetime(raw_date)
         display_date = date_obj.strftime("%Y/%m/%d %H:%M") if date_obj else raw_date or "未提供日期"
         section_title = tags or display_date
-        wrapped_content = render_collapsible_block(content, preview_chars=120, lang="text")
-        md_lines.append(f"## {section_title}\n\n{wrapped_content}")
+        md_lines.append(render_block(content, section_title, lang="text"))
+
 
     with open(os.path.join(folder_path, "index.md"), "w", encoding="utf-8") as f:
         f.write(f"# {theme}/{topic}\n\n" + "\n\n---\n\n".join(md_lines))
