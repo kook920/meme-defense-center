@@ -19,11 +19,11 @@ def parse_datetime(raw_date):
 
 import html
 
+def make_preview_by_chars(text: str, max_chars: int = 120) -> str:
+    s = " ".join((text or "").split())  # 把所有換行壓成空白
+    return s[:max_chars] + ("…" if len(s) > max_chars else "")
+
 def sanitize_code_content(s: str) -> str:
-    """
-    防止素材內容內含 ``` 或 ~~~ 造成巢狀 code fence 爆炸
-    用零寬字元打斷 fence
-    """
     if not s:
         return ""
     s = s.replace("```", "``\u200b`")
@@ -54,6 +54,7 @@ def render_collapsible_block(content: str, preview_chars: int = 120, lang: str =
 """.strip()
 
     return md
+
 
     
 # 📥 讀取 Google Sheets
