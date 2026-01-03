@@ -5,8 +5,8 @@
 <details>
 <summary>
 
-📄 預覽（前 5 行）：<br>
-https://www.youtube.com/shorts/gj8xrPTY5_0／曾經風光整個華人社會的大企業家馬雲／如今正式走下權力舞台。🔚 …（點擊展開全文）
+📄 預覽（約 120 字）：<br>
+https://www.youtube.com/shorts/gj8xrPTY5_0 曾經風光整個華人社會的大企業家馬雲 如今正式走下權力舞台。🔚 從 2020 年外灘金融論壇那場惹怒北京的演講開始，螞蟻集團的命運就急轉直下。IPO 被喊停…
 
 </summary>
 
