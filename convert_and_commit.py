@@ -126,7 +126,10 @@ for (zone_raw, theme, topic), group in df.groupby(["Zone", "Theme", "Topic"]):
     with open(os.path.join(folder_path, "index.md"), "w", encoding="utf-8") as f:
         f.write(f"# {theme}/{topic}\n\n" + "\n\n---\n\n".join(md_lines))
 
-    zone_map.setdefault(zone, {}).setdefault(theme, []).append(topic)
+zone_map.setdefault(zone, {}).setdefault(theme, [])
+if topic not in zone_map[zone][theme]:
+    zone_map[zone][theme].append(topic)
+
 
 # 🔧 為每個 Zone / Theme 建 README 結構
 for zone, themes in zone_map.items():
