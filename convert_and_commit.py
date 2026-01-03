@@ -27,13 +27,26 @@ def make_preview_by_chars(text: str, max_chars: int = 120) -> str:
 
 def seems_risky_for_details(content: str) -> bool:
     c = content or ""
-    if "<details" in c or "</details" in c or "<summary" in c or "</summary" in c:
+
+    # 1️⃣ 內容本身含 HTML 標籤 → 不包 details
+    for tag in ["<details", "</details", "<summary", "</summary", "<div", "</div", "<span", "</span"]:
+        if tag in c:
+            return True
+
+    # 2️⃣ 使用 ~~~ fence（GitBook 高風險）
+    if "~~~" in c:
         return True
-    if "<div" in c or "</div" in c or "<span" in c or "</span" in c:
+
+    # 3️⃣ 單一 code block 很長（就算每行不長）
+    if len(c) > 1200:
         return True
+
+    # 4️⃣ 超長單行（保險）
     if any(len(line) > 800 for line in c.splitlines()):
         return True
+
     return False
+
 
 
 def render_block(content: str, title: str, lang: str = "text") -> str:
@@ -43,9 +56,9 @@ def render_block(content: str, title: str, lang: str = "text") -> str:
         # 🚑 降級模式：不包 <details>，避免 GitBook 500
         return f"""## {title}
 
-~~~{lang}
+```{lang}
 {safe}
-~~~""".strip()
+```""".strip()
 
     preview = make_preview_by_chars(safe, max_chars=120)
     preview = html.escape(preview, quote=False)
@@ -60,9 +73,9 @@ def render_block(content: str, title: str, lang: str = "text") -> str:
 
 </summary>
 
-~~~{lang}
+```{lang}
 {safe}
-~~~
+```
 
 </details>""".strip()
 
