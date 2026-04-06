@@ -127,7 +127,7 @@ for (zone_raw, theme_raw, topic_raw), group in df.groupby(["Zone", "Theme", "Top
         tags = str(row["Tag"]).strip()
 
         date_obj = row["parsed_date"]
-        display_date = date_obj.strftime("%Y/%m/%d %H:%M") if pd.notnull(date_obj) else (raw_date or "未提供日期")
+        display_date = date_obj.strftime("%Y/%m/%d") if pd.notnull(date_obj) else (raw_date or "未提供日期")
         section_title = f"{display_date}｜{tags}" if tags else display_date
 
         md_lines.append(render_block(content, section_title, lang="text"))
@@ -157,20 +157,53 @@ for zone, themes in zone_map.items():
         if not os.path.exists(theme_readme):
             open(theme_readme, "w", encoding="utf-8").close()
 
-# 🏠 首頁：網站地圖 Site Map
+# 🏠 首頁：網站地圖 Site Map + 最近 10 筆素材
+recent_df = df.sort_values(by="parsed_date", ascending=False, na_position="last").head(10)
+
 with open(os.path.join(temp_root, "README.md"), "w", encoding="utf-8") as f:
-    f.write("# 文字素材庫（網站地圖）\n\n")
-    f.write("[回到入口頁 ➡](https://taipai-1.gitbook.io/l-ke-fu-wu-zhong-xin/)\n\n")
-    f.write("🚧 本頁面由自動化腳本產生，內容依據 Google Sheets 即時更新。\n\n")
-    f.write("## 網站地圖 Site Map\n\n")
+    f.write("# 文字素材庫（網站地圖）
+
+")
+    f.write("[回到入口頁 ➡](https://taipai-1.gitbook.io/l-ke-fu-wu-zhong-xin/)
+
+")
+    f.write("🚧 本頁面由自動化腳本產生，內容依據 Google Sheets 即時更新。
+
+")
+
+    f.write("## 最近 10 筆素材
+
+")
+    for _, row in recent_df.iterrows():
+        zone = str(row["Zone"]).strip() if pd.notna(row["Zone"]) and str(row["Zone"]).strip() else "未分類"
+        theme = str(row["Theme"]).strip() if pd.notna(row["Theme"]) and str(row["Theme"]).strip() else "未分類主題"
+        topic = str(row["Topic"]).strip() if pd.notna(row["Topic"]) and str(row["Topic"]).strip() else "未分類條目"
+        tags = str(row["Tag"]).strip()
+        raw_date = str(row["Date"]).strip()
+        date_obj = row["parsed_date"]
+        display_date = date_obj.strftime("%Y/%m/%d") if pd.notnull(date_obj) else (raw_date or "未提供日期")
+        topic_path = f"{zone}/{theme}/{topic}/index.md"
+        line_title = f"{display_date}｜{tags}" if tags else display_date
+        f.write(f"- [{line_title}]({topic_path})  \n  ↳ {zone} / {theme} / {topic}
+")
+
+    f.write("
+## 網站地圖 Site Map
+
+")
 
     for zone, themes in sorted(zone_map.items()):
-        f.write(f"### {zone}\n\n")
+        f.write(f"### {zone}
+
+")
         for theme, topics in sorted(themes.items()):
-            f.write(f"- **{theme}**\n")
+            f.write(f"- **{theme}**
+")
             for topic in sorted(topics):
-                f.write(f"  - {topic}\n")
-            f.write("\n")
+                f.write(f"  - {topic}
+")
+            f.write("
+")
 
 # 📖 寫入 SUMMARY.md 到 temp_output/
 with open(os.path.join(temp_root, "SUMMARY.md"), "w", encoding="utf-8") as f:
