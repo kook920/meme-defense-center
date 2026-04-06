@@ -165,9 +165,7 @@ with open(os.path.join(temp_root, "README.md"), "w", encoding="utf-8") as f:
     f.write("[回到入口頁 ➡](https://taipai-1.gitbook.io/l-ke-fu-wu-zhong-xin/)\n\n")
     f.write("🚧 本頁面由自動化腳本產生，內容依據 Google Sheets 即時更新。\n\n")
 
-    f.write("## 最近 10 筆素材
-
-")
+    f.write("## 最近 10 筆素材\n\n")
     for _, row in recent_df.iterrows():
         zone = str(row["Zone"]).strip() if pd.notna(row["Zone"]) and str(row["Zone"]).strip() else "未分類"
         theme = str(row["Theme"]).strip() if pd.notna(row["Theme"]) and str(row["Theme"]).strip() else "未分類主題"
@@ -178,26 +176,18 @@ with open(os.path.join(temp_root, "README.md"), "w", encoding="utf-8") as f:
         display_date = date_obj.strftime("%Y/%m/%d") if pd.notnull(date_obj) else (raw_date or "未提供日期")
         topic_path = f"{zone}/{theme}/{topic}/index.md"
         line_title = f"{display_date}｜{tags}" if tags else display_date
-        f.write(f"- [{line_title}]({topic_path})  \n  ↳ {zone} / {theme} / {topic}
-")
+        f.write(f"- [{line_title}]({topic_path})  \n  ↳ {zone} / {theme} / {topic}\n\n")
 
     f.write("
-## 網站地圖 Site Map
-
-")
+## 網站地圖 Site Map\n\n")
 
     for zone, themes in sorted(zone_map.items()):
-        f.write(f"### {zone}
-
-")
+        f.write(f"### {zone}\n\n")
         for theme, topics in sorted(themes.items()):
-            f.write(f"- **{theme}**
-")
+            f.write(f"- **{theme}**\n\n")
             for topic in sorted(topics):
-                f.write(f"  - {topic}
-")
-            f.write("
-")
+                f.write(f"  - {topic}\n\n")
+            f.write("\n\n")
 
 # 📖 寫入 SUMMARY.md 到 temp_output/
 with open(os.path.join(temp_root, "SUMMARY.md"), "w", encoding="utf-8") as f:
