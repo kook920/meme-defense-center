@@ -107,29 +107,34 @@ for (zone_raw, theme, topic), group in df.groupby(["Zone", "Theme", "Topic"]):
     theme = theme.strip()
     topic = topic.strip()
 
-    # Topic 底下：Zone/Theme/Topic/index.md
-    folder_path = os.path.join(temp_root, zone, theme, topic)
-    os.makedirs(folder_path, exist_ok=True)
+# Topic 底下：Zone/Theme/Topic/index.md
+folder_path = os.path.join(temp_root, zone, theme, topic)
+os.makedirs(folder_path, exist_ok=True)
 
-    md_lines = []
-    for _, row in group.iterrows():
-        raw_date = str(row["Date"]).strip()
-        content = str(row["Markdown"]).strip()
-        tags = str(row["Tag"]).strip()
+md_lines = []
 
-        date_obj = parse_datetime(raw_date)
-        display_date = date_obj.strftime("%Y/%m/%d %H:%M") if date_obj else raw_date or "未提供日期"
-        section_title = tags or display_date
-        md_lines.append(render_block(content, section_title, lang="text"))
+# ✅ 每個 Topic 內，素材由新到舊排序
+group = group.sort_values(by="parsed_date", ascending=False, na_position="last")
 
+for _, row in group.iterrows():
+    raw_date = str(row["Date"]).strip()
+    content = str(row["Markdown"]).strip()
+    tags = str(row["Tag"]).strip()
 
-    with open(os.path.join(folder_path, "index.md"), "w", encoding="utf-8") as f:
-        f.write(f"# {theme}/{topic}\n\n" + "\n\n---\n\n".join(md_lines))
+    date_obj = row["parsed_date"]
+    display_date = date_obj.strftime("%Y/%m/%d %H:%M") if pd.notnull(date_obj) else (raw_date or "未提供日期")
 
-    zone_map.setdefault(zone, {}).setdefault(theme, [])
-    if topic not in zone_map[zone][theme]:
-        zone_map[zone][theme].append(topic)
+    # ✅ 標題同時保留日期與 tag，方便看新舊
+    section_title = f"{display_date}｜{tags}" if tags else display_date
 
+    md_lines.append(render_block(content, section_title, lang="text"))
+
+with open(os.path.join(folder_path, "index.md"), "w", encoding="utf-8") as f:
+    f.write(f"# {theme}/{topic}\n\n" + "\n\n---\n\n".join(md_lines))
+
+zone_map.setdefault(zone, {}).setdefault(theme, [])
+if topic not in zone_map[zone][theme]:
+    zone_map[zone][theme].append(topic)
 
 # 🔧 為每個 Zone / Theme 建 README 結構
 for zone, themes in zone_map.items():
