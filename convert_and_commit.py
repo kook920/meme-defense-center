@@ -178,8 +178,7 @@ with open(os.path.join(temp_root, "README.md"), "w", encoding="utf-8") as f:
         line_title = f"{display_date}｜{tags}" if tags else display_date
         f.write(f"- [{line_title}]({topic_path})  \n  ↳ {zone} / {theme} / {topic}\n\n")
 
-    f.write("
-## 網站地圖 Site Map\n\n")
+    f.write("## 網站地圖 Site Map\n\n")
 
     for zone, themes in sorted(zone_map.items()):
         f.write(f"### {zone}\n\n")
