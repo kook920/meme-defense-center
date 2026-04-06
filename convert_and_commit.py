@@ -161,15 +161,9 @@ for zone, themes in zone_map.items():
 recent_df = df.sort_values(by="parsed_date", ascending=False, na_position="last").head(10)
 
 with open(os.path.join(temp_root, "README.md"), "w", encoding="utf-8") as f:
-    f.write("# 文字素材庫（網站地圖）
-
-")
-    f.write("[回到入口頁 ➡](https://taipai-1.gitbook.io/l-ke-fu-wu-zhong-xin/)
-
-")
-    f.write("🚧 本頁面由自動化腳本產生，內容依據 Google Sheets 即時更新。
-
-")
+    f.write("# 文字素材庫（網站地圖）\n\n")
+    f.write("[回到入口頁 ➡](https://taipai-1.gitbook.io/l-ke-fu-wu-zhong-xin/)\n\n")
+    f.write("🚧 本頁面由自動化腳本產生，內容依據 Google Sheets 即時更新。\n\n")
 
     f.write("## 最近 10 筆素材
 
