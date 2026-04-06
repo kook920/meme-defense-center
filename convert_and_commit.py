@@ -3,21 +3,24 @@ import os
 import urllib.parse
 import csv
 import shutil
+import html
 from dateutil import parser
 from datetime import datetime
 
 
 def parse_datetime(raw_date):
+    raw_date = str(raw_date).strip()
+    if not raw_date:
+        return pd.NaT
+
     try:
         return datetime.strptime(raw_date, "%Y/%m/%d %H:%M")
-    except:
+    except Exception:
         try:
             return parser.parse(raw_date)
-        except:
+        except Exception:
             print(f"❌ 無法解析日期：{raw_date}")
-            return None
-
-import html
+            return pd.NaT
 
 
 def make_preview_by_chars(text: str, max_chars: int = 120) -> str:
@@ -48,12 +51,10 @@ def seems_risky_for_details(content: str) -> bool:
     return False
 
 
-
 def render_block(content: str, title: str, lang: str = "text") -> str:
     safe = (content or "").strip()
 
     if seems_risky_for_details(safe):
-        # 🚑 降級模式：不包 <details>，避免 GitBook 500
         return f"""## {title}
 
 ```{lang}
@@ -80,10 +81,6 @@ def render_block(content: str, title: str, lang: str = "text") -> str:
 </details>""".strip()
 
 
-    return md
-
-
-    
 # 📥 讀取 Google Sheets
 sheet_name = os.environ.get("SHEET_NAME", "審核通過")
 spreadsheet_id = os.environ["SPREADSHEET_ID"]
@@ -91,10 +88,9 @@ encoded_sheet_name = urllib.parse.quote(sheet_name)
 CSV_URL = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_sheet_name}"
 
 df = pd.read_csv(CSV_URL, quoting=csv.QUOTE_ALL, keep_default_na=False)
-df = df[df["Status"] == "通過"]
+df = df[df["Status"] == "通過"].copy()
 
-✅ 建立穩定可排序的 datetime 欄位
-
+# ✅ 建立穩定可排序的 datetime 欄位
 df["parsed_date"] = df["Date"].apply(parse_datetime)
 df["parsed_date"] = pd.to_datetime(df["parsed_date"], errors="coerce")
 
@@ -107,39 +103,39 @@ os.makedirs(temp_root)
 zone_map = {}
 
 # 📂 寫入 Zone/Theme/Topic 結構到 temp_output/
-for (zone_raw, theme, topic), group in df.groupby(["Zone", "Theme", "Topic"]):
-    zone = (str(zone_raw) or "未分類").strip()
-    theme = theme.strip()
-    topic = topic.strip()
+for (zone_raw, theme_raw, topic_raw), group in df.groupby(["Zone", "Theme", "Topic"], dropna=False):
+    zone = str(zone_raw).strip() if pd.notna(zone_raw) and str(zone_raw).strip() else "未分類"
+    theme = str(theme_raw).strip() if pd.notna(theme_raw) and str(theme_raw).strip() else "未分類主題"
+    topic = str(topic_raw).strip() if pd.notna(topic_raw) and str(topic_raw).strip() else "未分類條目"
 
-# Topic 底下：Zone/Theme/Topic/index.md
-folder_path = os.path.join(temp_root, zone, theme, topic)
-os.makedirs(folder_path, exist_ok=True)
+    # Topic 底下：Zone/Theme/Topic/index.md
+    folder_path = os.path.join(temp_root, zone, theme, topic)
+    os.makedirs(folder_path, exist_ok=True)
 
-md_lines = []
+    md_lines = []
 
-# ✅ 每個 Topic 內，素材由新到舊排序
-group = group.sort_values(by="parsed_date", ascending=False, na_position="last")
+    # ✅ 每個 Topic 內，素材由新到舊排序
+    group = group.sort_values(by="parsed_date", ascending=False, na_position="last")
 
-for _, row in group.iterrows():
-    raw_date = str(row["Date"]).strip()
-    content = str(row["Markdown"]).strip()
-    tags = str(row["Tag"]).strip()
+    for _, row in group.iterrows():
+        raw_date = str(row["Date"]).strip()
+        content = str(row["Markdown"]).strip()
+        tags = str(row["Tag"]).strip()
 
-    date_obj = row["parsed_date"]
-    display_date = date_obj.strftime("%Y/%m/%d %H:%M") if pd.notnull(date_obj) else (raw_date or "未提供日期")
+        date_obj = row["parsed_date"]
+        display_date = date_obj.strftime("%Y/%m/%d %H:%M") if pd.notnull(date_obj) else (raw_date or "未提供日期")
 
-    # ✅ 標題同時保留日期與 tag，方便看新舊
-    section_title = f"{display_date}｜{tags}" if tags else display_date
+        # ✅ 標題同時保留日期與 tag，方便看新舊
+        section_title = f"{display_date}｜{tags}" if tags else display_date
 
-    md_lines.append(render_block(content, section_title, lang="text"))
+        md_lines.append(render_block(content, section_title, lang="text"))
 
-with open(os.path.join(folder_path, "index.md"), "w", encoding="utf-8") as f:
-    f.write(f"# {theme}/{topic}\n\n" + "\n\n---\n\n".join(md_lines))
+    with open(os.path.join(folder_path, "index.md"), "w", encoding="utf-8") as f:
+        f.write(f"# {theme}/{topic}\n\n" + "\n\n---\n\n".join(md_lines))
 
-zone_map.setdefault(zone, {}).setdefault(theme, [])
-if topic not in zone_map[zone][theme]:
-    zone_map[zone][theme].append(topic)
+    zone_map.setdefault(zone, {}).setdefault(theme, [])
+    if topic not in zone_map[zone][theme]:
+        zone_map[zone][theme].append(topic)
 
 # 🔧 為每個 Zone / Theme 建 README 結構
 for zone, themes in zone_map.items():
@@ -179,22 +175,17 @@ with open(os.path.join(temp_root, "README.md"), "w", encoding="utf-8") as f:
             f.write("\n")
 
 # 📖 寫入 SUMMARY.md 到 temp_output/
-# ✅ 關鍵修改：移除所有 urllib.parse.quote()，直接使用中文路徑
 with open(os.path.join(temp_root, "SUMMARY.md"), "w", encoding="utf-8") as f:
     f.write("# Summary\n\n")
     f.write("- [首頁](README.md)\n")
     for zone, themes in sorted(zone_map.items()):
-        # ✅ 直接使用中文，不編碼
         f.write(f"- [{zone}]({zone}/README.md)\n")
 
         for theme, topics in sorted(themes.items()):
-            # ✅ 直接使用中文路徑
             theme_path = f"{zone}/{theme}"
             f.write(f"  - [{theme}]({theme_path}/README.md)\n")
 
-            # Topic level：Zone/Theme/Topic/index.md
             for topic in sorted(topics):
-                # ✅ 直接使用中文路徑
                 topic_path = f"{theme_path}/{topic}"
                 f.write(f"    - [{topic}]({topic_path}/index.md)\n")
 
