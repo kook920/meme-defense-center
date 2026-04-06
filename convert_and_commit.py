@@ -93,6 +93,11 @@ CSV_URL = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/gviz/tq?tqx=
 df = pd.read_csv(CSV_URL, quoting=csv.QUOTE_ALL, keep_default_na=False)
 df = df[df["Status"] == "通過"]
 
+✅ 建立穩定可排序的 datetime 欄位
+
+df["parsed_date"] = df["Date"].apply(parse_datetime)
+df["parsed_date"] = pd.to_datetime(df["parsed_date"], errors="coerce")
+
 # 📁 建立暫存目錄
 temp_root = "temp_output"
 if os.path.exists(temp_root):
